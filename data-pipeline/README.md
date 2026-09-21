@@ -25,6 +25,7 @@ python scripts/acquire_major_language_catalog.py --metadata-only
 python scripts/acquire_major_language_catalog.py --max-downloads 10
 python scripts/acquire_major_language_catalog.py --skip-metadata --download-provider tatoeba
 python scripts/acquire_major_language_catalog.py --skip-metadata --download-provider lingualibre
+python scripts/acquire_fleurs_catalog.py
 ```
 
 Generated catalog files go in `data/processed/`; candidate queues go in
@@ -35,6 +36,12 @@ acquisition command checkpoints after every language and stops cleanly when a
 provider throttles requests. Rerun the same command later to continue; stored
 files and selected metadata are reused rather than fetched again. Download-only
 runs avoid spending metadata quota and can be restricted to one provider.
+
+`acquire_fleurs_catalog.py` fills remaining coverage from the CC BY 4.0 Google
+FLEURS corpus. It streams only far enough into each locale archive to extract a
+single selected WAV, aligns its transcript to the English FLORES sentence ID,
+and retains the locale as unverified review evidence rather than treating it as
+proof of the speaker's country.
 
 ## Production rule
 

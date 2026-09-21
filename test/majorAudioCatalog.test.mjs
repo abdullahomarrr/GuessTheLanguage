@@ -9,6 +9,9 @@ const projectRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
 const catalog = JSON.parse(
   readFileSync(join(projectRoot, 'src', 'data', 'majorSourcedAudioCatalog.json'), 'utf8')
 );
+const targets = JSON.parse(
+  readFileSync(join(projectRoot, 'data-pipeline', 'config', 'major_language_targets.json'), 'utf8')
+);
 
 test('every acquired major-language recording is stored, traceable, and review-only', () => {
   assert.equal(new Set(catalog.map((record) => record.clipId)).size, catalog.length);
@@ -29,4 +32,13 @@ test('every acquired major-language recording is stored, traceable, and review-o
     assert.equal(contents.length, record.sizeBytes);
     assert.equal(createHash('sha256').update(contents).digest('hex'), record.sha256);
   }
+});
+
+test('major-language acquisition has real files for every target except Tigrinya', () => {
+  assert.equal(catalog.length, 61);
+  const stored = new Set(catalog.map((record) => record.languageId));
+  assert.deepEqual(
+    targets.filter((target) => !stored.has(target.id)).map((target) => target.id),
+    ['lang_tigrinya']
+  );
 });

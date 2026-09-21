@@ -35,7 +35,9 @@ parser.add_argument("--skip-metadata", action="store_true")
 parser.add_argument("--download-provider", choices=("tatoeba", "lingualibre"))
 parser.add_argument("--max-downloads", type=int, default=0, help="0 means continue until complete or throttled")
 parser.add_argument("--request-delay", type=float, default=1.0)
+parser.add_argument("--languages", help="Comma-separated ISO 639-3 codes to process")
 args = parser.parse_args()
+requested_iso = {value.strip() for value in args.languages.split(",")} if args.languages else None
 
 MEDIA_OUT.mkdir(parents=True, exist_ok=True)
 CANDIDATES.mkdir(parents=True, exist_ok=True)
@@ -161,6 +163,8 @@ else:
 for index, target in enumerate(targets):
     if args.skip_metadata:
         break
+    if requested_iso and target["iso6393"] not in requested_iso:
+        continue
     if target["id"] in processed_language_ids:
         continue
     if target["id"] in tatoeba_by_language:
@@ -203,8 +207,11 @@ def probe_duration(path):
 
 
 downloaded_this_run = 0
+downloaded_language_ids = set()
 if not args.metadata_only:
     for candidate in selected_list:
+        if requested_iso and candidate["language_iso"] not in requested_iso:
+            continue
         if args.download_provider and candidate["provider"] != args.download_provider:
             continue
         destination = MEDIA_OUT / f"{candidate['language_iso']}{extension_for(candidate)}"
@@ -225,16 +232,25 @@ if not args.metadata_only:
                 break
             raise
         downloaded_this_run += 1
+        downloaded_language_ids.add(candidate["language_id"])
         print(f"Downloaded {candidate['language_iso']}: {destination.name}")
         time.sleep(3)
 
-runtime = []
+existing_runtime = json.loads(RUNTIME_OUT.read_text(encoding="utf-8")) if RUNTIME_OUT.exists() else []
+runtime_by_language = {record["languageId"]: record for record in existing_runtime}
 for candidate in selected_list:
     destination = MEDIA_OUT / f"{candidate['language_iso']}{extension_for(candidate)}"
     if not destination.exists() or destination.stat().st_size == 0:
         continue
+    if candidate["language_id"] in runtime_by_language:
+        continue
+    if candidate["language_id"] not in downloaded_language_ids:
+        print(
+            f"Skipped cataloging {candidate['language_iso']}: existing file has no matching runtime provenance"
+        )
+        continue
     contents = destination.read_bytes()
-    runtime.append({
+    runtime_by_language[candidate["language_id"]] = {
         "clipId": f"clip_{candidate['language_id'].removeprefix('lang_')}",
         "languageId": candidate["language_id"],
         "languageIso": candidate["language_iso"],
@@ -268,19 +284,25 @@ for candidate in selected_list:
             "reviewStatus": "PENDING",
             "notes": "Human-recorded licensed candidate; requires full review and speaker-geography evidence.",
         },
-    })
+    }
 
+runtime = list(runtime_by_language.values())
 RUNTIME_OUT.write_text(json.dumps(runtime, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+selected_stored = sum(1 for candidate in selected_list if candidate["language_id"] in runtime_by_language)
 lines = [
     "# Major-language audio acquisition",
     "",
     f"- Configured new language targets: **{len(targets)}**",
     f"- Targets with a reusable human-recorded candidate: **{len(selected_list)}**",
-    f"- Candidate files currently stored: **{len(runtime)}**",
-    f"- Remaining selected downloads: **{len(selected_list) - len(runtime)}**",
+    f"- Major-language files currently stored across providers: **{len(runtime)}**",
+    f"- Selected candidates currently stored: **{selected_stored}**",
+    f"- Remaining selected downloads: **{len(selected_list) - selected_stored}**",
     "- All records in this expansion remain **pending review**.",
     "",
     "Speaker country is intentionally not inferred from language or provider metadata.",
 ]
 REPORT_OUT.write_text("\n".join(lines) + "\n", encoding="utf-8")
-print(f"Stored {len(runtime)} of {len(selected_list)} selected major-language candidates")
+print(
+    f"Stored {len(runtime)} major-language files across providers; "
+    f"{selected_stored} of {len(selected_list)} selected candidates are stored"
+)
