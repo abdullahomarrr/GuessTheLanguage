@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lingo
 
-## Getting Started
+Lingo is a daily audio geography game: listen to a mystery speaker and work out where they are from in five guesses.
 
-First, run the development server:
+Each daily challenge combines a real voice recording with an interactive globe, geographic feedback, optional clues, and a Wordle-inspired one-game-per-day experience. The current development challenge features an Urdu recording from Pakistan.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## What is included
+
+- Daily mystery-voice challenge with five attempts
+- Custom audio player with waveform and English translation
+- Searchable country and language-aware guessing flow
+- Interactive 3D globe with country highlighting
+- Distance, continent, and hot/warm/cold geographic hints
+- Unlockable clue questions with answer-leak protection
+- Guess history, completion results, sharing, and local stats
+- Community audio-quality feedback for pronunciation, fluency, clarity, and authenticity
+- Provider-independent language, geography, audio, challenge, clue, and stats repositories
+- Review-first audio ingestion pipeline with source, licence, transcript, translation, and verification metadata
+- Private admin dashboard for analytics and audio-review monitoring
+
+## Project structure
+
+```text
+guessthelanguage/
+├── src/                 Main Lingo game
+│   ├── components/      Game, globe, audio, review, and modal UI
+│   ├── data/            Development language and challenge catalogue
+│   ├── services/        Storage-independent repositories and game logic
+│   └── types/           Shared domain models
+├── public/audio/        Reviewed development audio assets
+├── data-pipeline/       Candidate sourcing and normalization pipeline
+├── admin/               Independently runnable private admin dashboard
+├── docs/                Architecture documentation
+└── test/                Game-logic tests
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The frontend does not depend directly on a final database or audio-storage provider. The repository layer currently uses development data and is designed to move to Postgres/Supabase plus S3, R2, or Supabase Storage later. A language may belong to multiple regions, audio may come from multiple providers, and candidate recordings are not production-ready until reviewed and approved.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Run the game locally
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Requirements: Node.js and npm.
 
-## Learn More
+```bash
+npm install
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Open [http://localhost:3000](http://localhost:3000).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Useful commands:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm test
+npm run lint
+npm run build
+```
 
-## Deploy on Vercel
+## Run the admin dashboard
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The admin dashboard is a separate Next.js application inside `admin/` and runs on port `3001`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```powershell
+cd admin
+npm install
+Copy-Item .env.example .env.local
+npm run hash-password
+npm run dev
+```
+
+Add the generated password hash and your private secrets to `admin/.env.local`, then open [http://localhost:3001/login](http://localhost:3001/login). To send local game analytics to it, add this to the main app's `.env.local`:
+
+```env
+NEXT_PUBLIC_LINGO_ANALYTICS_ENDPOINT=http://localhost:3001/api/ingest
+```
+
+The dashboard uses labelled demo data when `DATABASE_URL` is empty. Its Postgres-ready schema lives at `admin/database/schema.sql`. See [`admin/README.md`](admin/README.md) for the security and privacy boundaries.
+
+## Data and audio pipeline
+
+The `data-pipeline/` directory contains the starter schema, source documentation, normalization scripts, and candidate manifests. It is intentionally review-first: sourced clips retain their provider, licence, attribution, transcript, translation, dialect, geographic anchors, and verification state.
+
+See [`docs/DATA_LAYER.md`](docs/DATA_LAYER.md) for the application architecture and [`data-pipeline/README.md`](data-pipeline/README.md) for pipeline usage.
+
+## Current status
+
+Lingo is under active development. The mock catalogue works end-to-end, while the domain boundaries and adapters are prepared for a production database, private answer validation, server-side geo hints, managed authentication, and a larger reviewed language catalogue.
+
+## Privacy
+
+The analytics design avoids storing raw IP addresses, precise coordinates, full user-agent strings, names, or emails. Approximate IP-derived location requires an appropriate privacy notice and consent flow before production use.
