@@ -189,6 +189,22 @@ export const ResultModal: React.FC<ResultModalProps> = ({
               <span className="font-semibold text-neutral-600 dark:text-neutral-300">English:</span>{' '}
               “{clip.translationEnglish}”
             </p>
+            <p className="mt-2 text-[10px] leading-relaxed text-neutral-400 dark:text-neutral-500">
+              Recording:{' '}
+              {clip.attributionUrl || clip.sourceUrl ? (
+                <a
+                  href={clip.attributionUrl || clip.sourceUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline decoration-neutral-300 underline-offset-2 hover:text-neutral-600 dark:decoration-neutral-700 dark:hover:text-neutral-300"
+                >
+                  {clip.creator || clip.sourceName}
+                </a>
+              ) : (
+                clip.creator || clip.sourceName
+              )}{' '}
+              · {clip.license}
+            </p>
           </section>
         )}
 

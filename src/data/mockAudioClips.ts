@@ -1,6 +1,7 @@
 import { AudioClip } from '@/types';
+import { SOURCED_AUDIO_CLIPS } from '@/data/sourcedAudioClips';
 
-export const MOCK_AUDIO_CLIPS: Record<string, AudioClip> = {
+const LEGACY_MOCK_AUDIO_CLIPS: Record<string, AudioClip> = {
   clip_urdu_lingualibre_preview: {
     id: 'clip_urdu_lingualibre_preview',
     languageId: 'lang_urdu',
@@ -447,4 +448,10 @@ export const MOCK_AUDIO_CLIPS: Record<string, AudioClip> = {
     containsDirectGiveaway: false,
     enabled: true,
   },
+};
+
+// Real acquired media replaces every legacy metadata-only placeholder by clip ID.
+export const MOCK_AUDIO_CLIPS: Record<string, AudioClip> = {
+  ...LEGACY_MOCK_AUDIO_CLIPS,
+  ...SOURCED_AUDIO_CLIPS,
 };

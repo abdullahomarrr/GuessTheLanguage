@@ -10,6 +10,7 @@ from urllib.request import Request, urlopen
 from urllib.error import HTTPError
 import argparse
 import json
+import time
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data" / "audio_candidates"
@@ -20,24 +21,37 @@ LANGUAGE_IDS = {
     "spa": "lang_spanish",
     "fra": "lang_french",
     "deu": "lang_german",
+    "ita": "lang_italian",
     "jpn": "lang_japanese",
     "por": "lang_portuguese",
+    "cym": "lang_welsh",
     "tur": "lang_turkish",
     "swa": "lang_swahili",
     "kor": "lang_korean",
     "rus": "lang_russian",
     "pol": "lang_polish",
+    "ara": "lang_arabic",
+    "fas": "lang_persian",
+    "hin": "lang_hindi",
     "urd": "lang_urdu",
+    "cmn": "lang_mandarin",
+    "vie": "lang_vietnamese",
+    "amh": "lang_amharic",
+    "som": "lang_somali",
+    "yor": "lang_yoruba",
+    "que": "lang_quechua",
 }
 
 PROVIDER_LANGUAGE_CODES = {
     "swa": "swh",
+    "fas": "pes",
 }
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--languages", default=",".join(LANGUAGE_IDS))
 parser.add_argument("--per-language", type=int, default=2)
 parser.add_argument("--scan-limit", type=int, default=60)
+parser.add_argument("--attempts", type=int, default=1)
 parser.add_argument("--output", default="tatoeba_starter_review.json")
 args = parser.parse_args()
 
@@ -85,11 +99,20 @@ for language in [value.strip() for value in args.languages.split(",") if value.s
         raise SystemExit(f"No app language ID mapping configured for {language}")
 
     selected = 0
-    try:
-        sentences = fetch(language)
-    except HTTPError as error:
-        print(f"{language}: provider rejected query ({error.code}); skipped")
-        continue
+    seen_sentence_ids = set()
+    sentences = []
+    for attempt in range(args.attempts):
+        try:
+            batch = fetch(language)
+        except HTTPError as error:
+            print(f"{language}: provider rejected query ({error.code}); skipped")
+            break
+        for sentence in batch:
+            if sentence["id"] not in seen_sentence_ids:
+                seen_sentence_ids.add(sentence["id"])
+                sentences.append(sentence)
+        if attempt + 1 < args.attempts:
+            time.sleep(0.35)
 
     for sentence in sentences:
         translations = [
@@ -101,7 +124,7 @@ for language in [value.strip() for value in args.languages.split(",") if value.s
 
         for audio in sentence.get("audios", []):
             license_name = audio.get("license") or audio.get("licence") or ""
-            if not license_name:
+            if license_name not in allowed_licenses:
                 continue
 
             records.append({
@@ -120,7 +143,7 @@ for language in [value.strip() for value in args.languages.split(",") if value.s
                 "sentence_license": sentence.get("license"),
                 "translation_license": translations[0].get("license"),
                 "license": license_name,
-                "license_policy_status": "PREFERRED" if license_name in allowed_licenses else "REVIEW_REQUIRED",
+                "license_policy_status": "PREFERRED",
                 "creator": audio.get("author"),
                 "attribution_url": audio.get("attribution_url"),
                 "source": "Tatoeba",

@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "node --test test/gameLogic.test.mjs"
+    "test": "node --test test/*.test.mjs"
   },
   "dependencies": {
     "canvas-confetti": "^1.9.4",

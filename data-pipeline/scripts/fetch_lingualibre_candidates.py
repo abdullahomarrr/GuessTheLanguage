@@ -3,10 +3,12 @@
 from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
+from urllib.error import HTTPError
 import argparse
 import csv
 import json
 import re
+import time
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data" / "audio_candidates"
@@ -24,12 +26,19 @@ category = f"Category:Lingua Libre pronunciation-{args.iso}"
 
 def api(params):
     query = {"format": "json", "formatversion": "2", **params}
-    request = Request(
-        API + "?" + urlencode(query),
-        headers={"User-Agent": "LanguageGameDataPipeline/0.1 (educational language game)"},
-    )
-    with urlopen(request, timeout=60) as response:
-        return json.load(response)
+    for attempt in range(5):
+        request = Request(
+            API + "?" + urlencode(query),
+            headers={"User-Agent": "LingoDaily/0.1 (contact: repository owner; educational language game)"},
+        )
+        try:
+            with urlopen(request, timeout=60) as response:
+                return json.load(response)
+        except HTTPError as error:
+            if error.code != 429 or attempt == 4:
+                raise
+            retry_after = int(error.headers.get("Retry-After", "0") or 0)
+            time.sleep(max(retry_after, 2 ** (attempt + 1)))
 
 
 titles = []
