@@ -21,10 +21,20 @@ python scripts/download_glottolog.py
 python scripts/normalize_glottolog.py
 python scripts/fetch_lingualibre_candidates.py --iso spa --limit 50
 python scripts/fetch_tatoeba_sentence_candidates.py --languages spa,fra,deu --per-language 2
+python scripts/acquire_major_language_catalog.py --metadata-only
+python scripts/acquire_major_language_catalog.py --max-downloads 10
+python scripts/acquire_major_language_catalog.py --skip-metadata --download-provider tatoeba
+python scripts/acquire_major_language_catalog.py --skip-metadata --download-provider lingualibre
 ```
 
 Generated catalog files go in `data/processed/`; candidate queues go in
 `data/audio_candidates/`. See `docs/DATA_LAYER.md` for the runtime plug-in points.
+
+`config/major_language_targets.json` defines the resumable expansion tier. The
+acquisition command checkpoints after every language and stops cleanly when a
+provider throttles requests. Rerun the same command later to continue; stored
+files and selected metadata are reused rather than fetched again. Download-only
+runs avoid spending metadata quota and can be restricted to one provider.
 
 ## Production rule
 

@@ -1,12 +1,13 @@
 import { AudioClip } from '@/types';
 import sourcedCatalog from '@/data/sourcedAudioCatalog.json';
+import majorSourcedCatalog from '@/data/majorSourcedAudioCatalog.json';
 
 /**
  * Provider-neutral runtime adapter for the reviewed acquisition manifest.
  * The JSON remains the auditable boundary between the offline pipeline and UI.
  */
 export const SOURCED_AUDIO_CLIPS = Object.fromEntries(
-  sourcedCatalog.map((record) => [
+  [...sourcedCatalog, ...majorSourcedCatalog].map((record) => [
     record.clipId,
     {
       id: record.clipId,

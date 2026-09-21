@@ -42,6 +42,13 @@ LANGUAGE_IDS = {
     "que": "lang_quechua",
 }
 
+# Additional acquisition targets are configuration, not UI hardcoding. They stay
+# outside the playable catalog until a sourced recording and full review exist.
+target_config = ROOT / "config" / "major_language_targets.json"
+if target_config.exists():
+    for target in json.loads(target_config.read_text(encoding="utf-8")):
+        LANGUAGE_IDS[target["iso6393"]] = target["id"]
+
 PROVIDER_LANGUAGE_CODES = {
     "swa": "swh",
     "fas": "pes",
