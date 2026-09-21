@@ -40,7 +40,7 @@ export function getChallengeForDate(dateStr: string): DailyChallenge {
     answerMode: 'SPEAKER_COUNTRY',
     answerGeoAnchor: developmentLanguage?.geoAnchor,
     resultMetadata: {
-      curatorNote: 'Real Lingua Libre Urdu recording; formal catalogue review is still pending.',
+      curatorNote: 'Real Lingua Libre Urdu recording approved for game use by the project owner.',
     },
   };
 }
