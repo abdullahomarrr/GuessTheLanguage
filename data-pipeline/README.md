@@ -26,6 +26,7 @@ python scripts/acquire_major_language_catalog.py --max-downloads 10
 python scripts/acquire_major_language_catalog.py --skip-metadata --download-provider tatoeba
 python scripts/acquire_major_language_catalog.py --skip-metadata --download-provider lingualibre
 python scripts/acquire_fleurs_catalog.py
+python scripts/approve_catalog_for_rotation.py
 ```
 
 Generated catalog files go in `data/processed/`; candidate queues go in
@@ -42,6 +43,11 @@ FLEURS corpus. It streams only far enough into each locale archive to extract a
 single selected WAV, aligns its transcript to the English FLORES sentence ID,
 and retains the locale as unverified review evidence rather than treating it as
 proof of the speaker's country.
+
+`approve_catalog_for_rotation.py` is an explicit owner-approval operation. It
+promotes the stored catalogs to production, records the reviewer and timestamp,
+and generates the playable country-anchor metadata consumed by the daily
+rotation. Do not run it as part of automatic ingestion.
 
 ## Production rule
 

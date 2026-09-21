@@ -1,0 +1,2978 @@
+[
+  {
+    "id": "lang_bengali",
+    "name": "Bengali",
+    "nativeName": "Bengali",
+    "aliases": [
+      "Bengali"
+    ],
+    "iso6393": "ben",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Bengali"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "primaryRegions": [
+      "Bangladesh",
+      "India"
+    ],
+    "countries": [
+      "Bangladesh",
+      "India"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 24,
+      "longitude": 90,
+      "continent": "Asia",
+      "countryCode": "BD",
+      "countryName": "Bangladesh",
+      "regionName": "Southern Asia",
+      "polygonId": "050",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Bengali script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Lingua Libre / Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:LL-Q9610_(ben)-Aishik_Rehman-%E0%A6%85_%E0%A6%A4%E0%A7%87_%E0%A6%85%E0%A6%95%E0%A7%8D%E0%A6%B8%E0%A6%BF%E0%A6%9C%E0%A7%87%E0%A6%A8.wav",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Human recording by Speaker: Aishik Rehman\nRecorder: Aishik Rehman"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_punjabi",
+    "name": "Punjabi",
+    "nativeName": "Punjabi",
+    "aliases": [
+      "Punjabi"
+    ],
+    "iso6393": "pan",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Gurmukhi"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "primaryRegions": [
+      "Pakistan",
+      "India"
+    ],
+    "countries": [
+      "Pakistan",
+      "India"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 20,
+      "longitude": 77,
+      "continent": "Asia",
+      "countryCode": "IN",
+      "countryName": "India",
+      "regionName": "Southern Asia",
+      "polygonId": "356",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Gurmukhi script.",
+      "tonal": true,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Lingua Libre / Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:LL-Q58635_(pan)-Gaurav_Jhammat-2004_%E0%A8%B9%E0%A8%BF%E0%A9%B0%E0%A8%A6_%E0%A8%AE%E0%A8%B9%E0%A8%BE%E0%A8%B8%E0%A8%BE%E0%A8%97%E0%A8%B0_%E0%A8%AD%E0%A9%82%E0%A8%9A%E0%A8%BE%E0%A8%B2_%E0%A8%85%E0%A8%A4%E0%A9%87_%E0%A8%B8%E0%A9%81%E0%A8%A8%E0%A8%BE%E0%A8%AE%E0%A9%80.wav",
+      "license": "CC0",
+      "attribution": "Human recording by Speaker: Gaurav Jhammat\nRecorder: Gaurav Jhammat"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_marathi",
+    "name": "Marathi",
+    "nativeName": "Marathi",
+    "aliases": [
+      "Marathi"
+    ],
+    "iso6393": "mar",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Devanagari"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "primaryRegions": [
+      "India"
+    ],
+    "countries": [
+      "India"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 20,
+      "longitude": 77,
+      "continent": "Asia",
+      "countryCode": "IN",
+      "countryName": "India",
+      "regionName": "Southern Asia",
+      "polygonId": "356",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Devanagari script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Lingua Libre / Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:LL-Q1571_(mar)-SangeetaRH-1927_%E0%A4%9A%E0%A5%8D%E0%A4%AF%E0%A4%BE_%E0%A4%A8%E0%A4%BE%E0%A4%97%E0%A4%AA%E0%A5%81%E0%A4%B0_%E0%A4%A6%E0%A4%82%E0%A4%97%E0%A4%B2%E0%A5%80.wav",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Human recording by Speaker: SangeetaRH\nRecorder: SangeetaRH"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_telugu",
+    "name": "Telugu",
+    "nativeName": "Telugu",
+    "aliases": [
+      "Telugu"
+    ],
+    "iso6393": "tel",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Telugu"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "primaryRegions": [
+      "India"
+    ],
+    "countries": [
+      "India"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 20,
+      "longitude": 77,
+      "continent": "Asia",
+      "countryCode": "IN",
+      "countryName": "India",
+      "regionName": "Southern Asia",
+      "polygonId": "356",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Telugu script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Lingua Libre / Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:LL-Q8097_(tel)-V_Bhavya-%22%E0%B0%B8%E0%B0%B9%E0%B1%88%E0%B0%B5_%E0%B0%A6%E0%B0%B6%E0%B0%AD%E0%B0%BF%E0%B0%83_%E0%B0%AA%E0%B1%81%E0%B0%A4%E0%B1%8D%E0%B0%A4%E0%B1%8D%E0%B0%B0%E0%B1%88%E0%B0%B0%E0%B1%8D%E0%B0%AD%E0%B0%BE%E0%B0%B0%E0%B0%82_%E0%B0%B5%E0%B0%B9%E0%B0%A4%E0%B0%BF_%E0%B0%97%E0%B0%B0%E0%B1%8D%E0%B0%A6%E0%B0%AD%E0%B1%80%22_%E0%B0%A8%E0%B1%8D%E0%B0%AF%E0%B0%BE%E0%B0%AF%E0%B0%AE%E0%B1%81.wav",
+      "license": "CC0",
+      "attribution": "Human recording by Speaker: V Bhavya\nRecorder: V Bhavya"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_tamil",
+    "name": "Tamil",
+    "nativeName": "Tamil",
+    "aliases": [
+      "Tamil"
+    ],
+    "iso6393": "tam",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Tamil"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "primaryRegions": [
+      "India",
+      "Sri Lanka",
+      "Singapore"
+    ],
+    "countries": [
+      "India",
+      "Sri Lanka",
+      "Singapore"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 20,
+      "longitude": 77,
+      "continent": "Asia",
+      "countryCode": "IN",
+      "countryName": "India",
+      "regionName": "Southern Asia",
+      "polygonId": "356",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Tamil script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Lingua Libre / Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:LL-Q5885_(tam)-Sriveenkat-%E0%AE%85%E0%AE%95%E0%AE%A4%E0%AF%8D%E0%AE%A4%E0%AE%BF_%E0%AE%86%E0%AE%AF%E0%AE%BF%E0%AE%B0%E0%AE%AE%E0%AF%8D_%E0%AE%95%E0%AE%BE%E0%AE%AF%E0%AF%8D_%E0%AE%95%E0%AE%BE%E0%AE%AF%E0%AF%8D%E0%AE%A4%E0%AF%8D%E0%AE%A4%E0%AE%BE%E0%AE%B2%E0%AF%81%E0%AE%AE%E0%AF%8D_%E0%AE%AA%E0%AF%81%E0%AE%B1%E0%AE%A4%E0%AF%8D%E0%AE%A4%E0%AE%BF_%E0%AE%AA%E0%AF%81%E0%AE%B1%E0%AE%A4%E0%AF%8D%E0%AE%A4%E0%AE%BF%E0%AE%AF%E0%AF%87.wav",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Human recording by Speaker: Sriveenkat\nRecorder: Sriveenkat"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_gujarati",
+    "name": "Gujarati",
+    "nativeName": "Gujarati",
+    "aliases": [
+      "Gujarati"
+    ],
+    "iso6393": "guj",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Gujarati"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "primaryRegions": [
+      "India"
+    ],
+    "countries": [
+      "India"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 20,
+      "longitude": 77,
+      "continent": "Asia",
+      "countryCode": "IN",
+      "countryName": "India",
+      "regionName": "Southern Asia",
+      "polygonId": "356",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Gujarati script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Lingua Libre / Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:LL-Q5137_(guj)-Sushant_savla-%E0%AA%95%E0%AB%8B%E0%AA%A8%E0%AB%80_%E0%AA%B8%E0%AA%BE%E0%AA%A5%E0%AB%87_%E0%AA%B6%E0%AB%81%E0%AA%82_%E0%AA%A8%E0%AA%BE_%E0%AA%B2%E0%AB%87%E0%AA%B5%E0%AA%BE%E0%AA%AF.wav",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Human recording by Speaker: Sushant savla\nRecorder: Sushant savla"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_thai",
+    "name": "Thai",
+    "nativeName": "Thai",
+    "aliases": [
+      "Thai"
+    ],
+    "iso6393": "tha",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Thai"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "primaryRegions": [
+      "Thailand"
+    ],
+    "countries": [
+      "Thailand"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 15,
+      "longitude": 100,
+      "continent": "Asia",
+      "countryCode": "TH",
+      "countryName": "Thailand",
+      "regionName": "South-Eastern Asia",
+      "polygonId": "764",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Thai script.",
+      "tonal": true,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Tatoeba",
+      "url": "https://tatoeba.org/en/sentences/show/8720264",
+      "license": "CC BY 4.0",
+      "attribution": "Human recording by ThaiVoice"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_catalan",
+    "name": "Catalan",
+    "nativeName": "Catalan",
+    "aliases": [
+      "Catalan"
+    ],
+    "iso6393": "cat",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Europe"
+    ],
+    "primaryRegions": [
+      "Spain",
+      "Andorra",
+      "France"
+    ],
+    "countries": [
+      "Spain",
+      "Andorra",
+      "France"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 40,
+      "longitude": -4,
+      "continent": "Europe",
+      "countryCode": "ES",
+      "countryName": "Spain",
+      "regionName": "Southern Europe",
+      "polygonId": "724",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Tatoeba",
+      "url": "https://tatoeba.org/en/sentences/show/1529348",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Human recording by gonsalet"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_malay",
+    "name": "Malay",
+    "nativeName": "Malay",
+    "aliases": [
+      "Malay"
+    ],
+    "iso6393": "zsm",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "primaryRegions": [
+      "Malaysia",
+      "Brunei",
+      "Singapore"
+    ],
+    "countries": [
+      "Malaysia",
+      "Brunei",
+      "Singapore"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 2.5,
+      "longitude": 112.5,
+      "continent": "Asia",
+      "countryCode": "MY",
+      "countryName": "Malaysia",
+      "regionName": "South-Eastern Asia",
+      "polygonId": "458",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/ms_my",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_javanese",
+    "name": "Javanese",
+    "nativeName": "Javanese",
+    "aliases": [
+      "Javanese"
+    ],
+    "iso6393": "jav",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "primaryRegions": [
+      "Indonesia"
+    ],
+    "countries": [
+      "Indonesia"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": -5,
+      "longitude": 120,
+      "continent": "Asia",
+      "countryCode": "ID",
+      "countryName": "Indonesia",
+      "regionName": "South-Eastern Asia",
+      "polygonId": "360",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/jv_id",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_dutch",
+    "name": "Dutch",
+    "nativeName": "Dutch",
+    "aliases": [
+      "Dutch"
+    ],
+    "iso6393": "nld",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Europe"
+    ],
+    "primaryRegions": [
+      "Netherlands",
+      "Belgium",
+      "Suriname"
+    ],
+    "countries": [
+      "Netherlands",
+      "Belgium",
+      "Suriname"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 52.5,
+      "longitude": 5.75,
+      "continent": "Europe",
+      "countryCode": "NL",
+      "countryName": "Netherlands",
+      "regionName": "Western Europe",
+      "polygonId": "528",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/nl_nl",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_czech",
+    "name": "Czech",
+    "nativeName": "Czech",
+    "aliases": [
+      "Czech"
+    ],
+    "iso6393": "ces",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Europe"
+    ],
+    "primaryRegions": [
+      "Czechia"
+    ],
+    "countries": [
+      "Czechia"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 49.75,
+      "longitude": 15.5,
+      "continent": "Europe",
+      "countryCode": "CZ",
+      "countryName": "Czechia",
+      "regionName": "Central Europe",
+      "polygonId": "203",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/cs_cz",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_slovak",
+    "name": "Slovak",
+    "nativeName": "Slovak",
+    "aliases": [
+      "Slovak"
+    ],
+    "iso6393": "slk",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Europe"
+    ],
+    "primaryRegions": [
+      "Slovakia"
+    ],
+    "countries": [
+      "Slovakia"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 48.66666666,
+      "longitude": 19.5,
+      "continent": "Europe",
+      "countryCode": "SK",
+      "countryName": "Slovakia",
+      "regionName": "Central Europe",
+      "polygonId": "703",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/sk_sk",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_hungarian",
+    "name": "Hungarian",
+    "nativeName": "Hungarian",
+    "aliases": [
+      "Hungarian"
+    ],
+    "iso6393": "hun",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Europe"
+    ],
+    "primaryRegions": [
+      "Hungary"
+    ],
+    "countries": [
+      "Hungary"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 47,
+      "longitude": 20,
+      "continent": "Europe",
+      "countryCode": "HU",
+      "countryName": "Hungary",
+      "regionName": "Central Europe",
+      "polygonId": "348",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/hu_hu",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_romanian",
+    "name": "Romanian",
+    "nativeName": "Romanian",
+    "aliases": [
+      "Romanian"
+    ],
+    "iso6393": "ron",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Europe"
+    ],
+    "primaryRegions": [
+      "Romania",
+      "Moldova"
+    ],
+    "countries": [
+      "Romania",
+      "Moldova"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 46,
+      "longitude": 25,
+      "continent": "Europe",
+      "countryCode": "RO",
+      "countryName": "Romania",
+      "regionName": "Southeast Europe",
+      "polygonId": "642",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/ro_ro",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_ukrainian",
+    "name": "Ukrainian",
+    "nativeName": "Ukrainian",
+    "aliases": [
+      "Ukrainian"
+    ],
+    "iso6393": "ukr",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Cyrillic"
+    ],
+    "continents": [
+      "Europe"
+    ],
+    "primaryRegions": [
+      "Ukraine"
+    ],
+    "countries": [
+      "Ukraine"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 49,
+      "longitude": 32,
+      "continent": "Europe",
+      "countryCode": "UA",
+      "countryName": "Ukraine",
+      "regionName": "Eastern Europe",
+      "polygonId": "804",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Cyrillic script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/uk_ua",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_greek",
+    "name": "Greek",
+    "nativeName": "Greek",
+    "aliases": [
+      "Greek"
+    ],
+    "iso6393": "ell",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Greek"
+    ],
+    "continents": [
+      "Europe"
+    ],
+    "primaryRegions": [
+      "Greece",
+      "Cyprus"
+    ],
+    "countries": [
+      "Greece",
+      "Cyprus"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 39,
+      "longitude": 22,
+      "continent": "Europe",
+      "countryCode": "GR",
+      "countryName": "Greece",
+      "regionName": "Southern Europe",
+      "polygonId": "300",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Greek script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/el_gr",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_swedish",
+    "name": "Swedish",
+    "nativeName": "Swedish",
+    "aliases": [
+      "Swedish"
+    ],
+    "iso6393": "swe",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Europe"
+    ],
+    "primaryRegions": [
+      "Sweden",
+      "Finland"
+    ],
+    "countries": [
+      "Sweden",
+      "Finland"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 62,
+      "longitude": 15,
+      "continent": "Europe",
+      "countryCode": "SE",
+      "countryName": "Sweden",
+      "regionName": "Northern Europe",
+      "polygonId": "752",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/sv_se",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_norwegian_bokmal",
+    "name": "Norwegian Bokmål",
+    "nativeName": "Norwegian Bokmål",
+    "aliases": [
+      "Norwegian Bokmål"
+    ],
+    "iso6393": "nob",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Europe"
+    ],
+    "primaryRegions": [
+      "Norway"
+    ],
+    "countries": [
+      "Norway"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 62,
+      "longitude": 10,
+      "continent": "Europe",
+      "countryCode": "NO",
+      "countryName": "Norway",
+      "regionName": "Northern Europe",
+      "polygonId": "578",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/nb_no",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_danish",
+    "name": "Danish",
+    "nativeName": "Danish",
+    "aliases": [
+      "Danish"
+    ],
+    "iso6393": "dan",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Europe"
+    ],
+    "primaryRegions": [
+      "Denmark"
+    ],
+    "countries": [
+      "Denmark"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 56,
+      "longitude": 10,
+      "continent": "Europe",
+      "countryCode": "DK",
+      "countryName": "Denmark",
+      "regionName": "Northern Europe",
+      "polygonId": "208",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/da_dk",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_finnish",
+    "name": "Finnish",
+    "nativeName": "Finnish",
+    "aliases": [
+      "Finnish"
+    ],
+    "iso6393": "fin",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Europe"
+    ],
+    "primaryRegions": [
+      "Finland"
+    ],
+    "countries": [
+      "Finland"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 64,
+      "longitude": 26,
+      "continent": "Europe",
+      "countryCode": "FI",
+      "countryName": "Finland",
+      "regionName": "Northern Europe",
+      "polygonId": "246",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/fi_fi",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_icelandic",
+    "name": "Icelandic",
+    "nativeName": "Icelandic",
+    "aliases": [
+      "Icelandic"
+    ],
+    "iso6393": "isl",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Europe"
+    ],
+    "primaryRegions": [
+      "Iceland"
+    ],
+    "countries": [
+      "Iceland"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 65,
+      "longitude": -18,
+      "continent": "Europe",
+      "countryCode": "IS",
+      "countryName": "Iceland",
+      "regionName": "Northern Europe",
+      "polygonId": "352",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/is_is",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_irish",
+    "name": "Irish",
+    "nativeName": "Irish",
+    "aliases": [
+      "Irish"
+    ],
+    "iso6393": "gle",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Europe"
+    ],
+    "primaryRegions": [
+      "Ireland"
+    ],
+    "countries": [
+      "Ireland"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 53,
+      "longitude": -8,
+      "continent": "Europe",
+      "countryCode": "IE",
+      "countryName": "Ireland",
+      "regionName": "Northern Europe",
+      "polygonId": "372",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/ga_ie",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_hebrew",
+    "name": "Hebrew",
+    "nativeName": "Hebrew",
+    "aliases": [
+      "Hebrew"
+    ],
+    "iso6393": "heb",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Hebrew"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "primaryRegions": [
+      "Israel"
+    ],
+    "countries": [
+      "Israel"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 31.47,
+      "longitude": 35.13,
+      "continent": "Asia",
+      "countryCode": "IL",
+      "countryName": "Israel",
+      "regionName": "Western Asia",
+      "polygonId": "376",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Hebrew script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/he_il",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_armenian",
+    "name": "Armenian",
+    "nativeName": "Armenian",
+    "aliases": [
+      "Armenian"
+    ],
+    "iso6393": "hye",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Armenian"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "primaryRegions": [
+      "Armenia"
+    ],
+    "countries": [
+      "Armenia"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 40,
+      "longitude": 45,
+      "continent": "Asia",
+      "countryCode": "AM",
+      "countryName": "Armenia",
+      "regionName": "Western Asia",
+      "polygonId": "051",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Armenian script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/hy_am",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_georgian",
+    "name": "Georgian",
+    "nativeName": "Georgian",
+    "aliases": [
+      "Georgian"
+    ],
+    "iso6393": "kat",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Georgian"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "primaryRegions": [
+      "Georgia"
+    ],
+    "countries": [
+      "Georgia"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 42,
+      "longitude": 43.5,
+      "continent": "Asia",
+      "countryCode": "GE",
+      "countryName": "Georgia",
+      "regionName": "Western Asia",
+      "polygonId": "268",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Georgian script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/ka_ge",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_azerbaijani",
+    "name": "Azerbaijani",
+    "nativeName": "Azerbaijani",
+    "aliases": [
+      "Azerbaijani"
+    ],
+    "iso6393": "aze",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "primaryRegions": [
+      "Azerbaijan",
+      "Iran"
+    ],
+    "countries": [
+      "Azerbaijan",
+      "Iran"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 40.5,
+      "longitude": 47.5,
+      "continent": "Asia",
+      "countryCode": "AZ",
+      "countryName": "Azerbaijan",
+      "regionName": "Western Asia",
+      "polygonId": "031",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/az_az",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_kazakh",
+    "name": "Kazakh",
+    "nativeName": "Kazakh",
+    "aliases": [
+      "Kazakh"
+    ],
+    "iso6393": "kaz",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Cyrillic"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "primaryRegions": [
+      "Kazakhstan"
+    ],
+    "countries": [
+      "Kazakhstan"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 48,
+      "longitude": 68,
+      "continent": "Asia",
+      "countryCode": "KZ",
+      "countryName": "Kazakhstan",
+      "regionName": "Central Asia",
+      "polygonId": "398",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Cyrillic script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/kk_kz",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_uzbek",
+    "name": "Uzbek",
+    "nativeName": "Uzbek",
+    "aliases": [
+      "Uzbek"
+    ],
+    "iso6393": "uzb",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "primaryRegions": [
+      "Uzbekistan"
+    ],
+    "countries": [
+      "Uzbekistan"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 41,
+      "longitude": 64,
+      "continent": "Asia",
+      "countryCode": "UZ",
+      "countryName": "Uzbekistan",
+      "regionName": "Central Asia",
+      "polygonId": "860",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/uz_uz",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_mongolian",
+    "name": "Mongolian",
+    "nativeName": "Mongolian",
+    "aliases": [
+      "Mongolian"
+    ],
+    "iso6393": "mon",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Cyrillic"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "primaryRegions": [
+      "Mongolia",
+      "China"
+    ],
+    "countries": [
+      "Mongolia",
+      "China"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 46,
+      "longitude": 105,
+      "continent": "Asia",
+      "countryCode": "MN",
+      "countryName": "Mongolia",
+      "regionName": "Eastern Asia",
+      "polygonId": "496",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Cyrillic script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/mn_mn",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_pashto",
+    "name": "Pashto",
+    "nativeName": "Pashto",
+    "aliases": [
+      "Pashto"
+    ],
+    "iso6393": "pus",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Arabic"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "primaryRegions": [
+      "Afghanistan",
+      "Pakistan"
+    ],
+    "countries": [
+      "Afghanistan",
+      "Pakistan"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 33,
+      "longitude": 65,
+      "continent": "Asia",
+      "countryCode": "AF",
+      "countryName": "Afghanistan",
+      "regionName": "Southern Asia",
+      "polygonId": "004",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Arabic script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/ps_af",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_hausa",
+    "name": "Hausa",
+    "nativeName": "Hausa",
+    "aliases": [
+      "Hausa"
+    ],
+    "iso6393": "hau",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Africa"
+    ],
+    "primaryRegions": [
+      "Nigeria",
+      "Niger"
+    ],
+    "countries": [
+      "Nigeria",
+      "Niger"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 10,
+      "longitude": 8,
+      "continent": "Africa",
+      "countryCode": "NG",
+      "countryName": "Nigeria",
+      "regionName": "Western Africa",
+      "polygonId": "566",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": true,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/ha_ng",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_igbo",
+    "name": "Igbo",
+    "nativeName": "Igbo",
+    "aliases": [
+      "Igbo"
+    ],
+    "iso6393": "ibo",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Africa"
+    ],
+    "primaryRegions": [
+      "Nigeria"
+    ],
+    "countries": [
+      "Nigeria"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 10,
+      "longitude": 8,
+      "continent": "Africa",
+      "countryCode": "NG",
+      "countryName": "Nigeria",
+      "regionName": "Western Africa",
+      "polygonId": "566",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": true,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/ig_ng",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_zulu",
+    "name": "Zulu",
+    "nativeName": "Zulu",
+    "aliases": [
+      "Zulu"
+    ],
+    "iso6393": "zul",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Africa"
+    ],
+    "primaryRegions": [
+      "South Africa"
+    ],
+    "countries": [
+      "South Africa"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": -29,
+      "longitude": 24,
+      "continent": "Africa",
+      "countryCode": "ZA",
+      "countryName": "South Africa",
+      "regionName": "Southern Africa",
+      "polygonId": "710",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": true,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/zu_za",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_xhosa",
+    "name": "Xhosa",
+    "nativeName": "Xhosa",
+    "aliases": [
+      "Xhosa"
+    ],
+    "iso6393": "xho",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Africa"
+    ],
+    "primaryRegions": [
+      "South Africa"
+    ],
+    "countries": [
+      "South Africa"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": -29,
+      "longitude": 24,
+      "continent": "Africa",
+      "countryCode": "ZA",
+      "countryName": "South Africa",
+      "regionName": "Southern Africa",
+      "polygonId": "710",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": true,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/xh_za",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_afrikaans",
+    "name": "Afrikaans",
+    "nativeName": "Afrikaans",
+    "aliases": [
+      "Afrikaans"
+    ],
+    "iso6393": "afr",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Africa"
+    ],
+    "primaryRegions": [
+      "South Africa",
+      "Namibia"
+    ],
+    "countries": [
+      "South Africa",
+      "Namibia"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": -29,
+      "longitude": 24,
+      "continent": "Africa",
+      "countryCode": "ZA",
+      "countryName": "South Africa",
+      "regionName": "Southern Africa",
+      "polygonId": "710",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/af_za",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_oromo",
+    "name": "Oromo",
+    "nativeName": "Oromo",
+    "aliases": [
+      "Oromo"
+    ],
+    "iso6393": "orm",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Africa"
+    ],
+    "primaryRegions": [
+      "Ethiopia",
+      "Kenya"
+    ],
+    "countries": [
+      "Ethiopia",
+      "Kenya"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 8,
+      "longitude": 38,
+      "continent": "Africa",
+      "countryCode": "ET",
+      "countryName": "Ethiopia",
+      "regionName": "Eastern Africa",
+      "polygonId": "231",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/om_et",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_shona",
+    "name": "Shona",
+    "nativeName": "Shona",
+    "aliases": [
+      "Shona"
+    ],
+    "iso6393": "sna",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Africa"
+    ],
+    "primaryRegions": [
+      "Zimbabwe"
+    ],
+    "countries": [
+      "Zimbabwe"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": -20,
+      "longitude": 30,
+      "continent": "Africa",
+      "countryCode": "ZW",
+      "countryName": "Zimbabwe",
+      "regionName": "Eastern Africa",
+      "polygonId": "716",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": true,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/sn_zw",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_wolof",
+    "name": "Wolof",
+    "nativeName": "Wolof",
+    "aliases": [
+      "Wolof"
+    ],
+    "iso6393": "wol",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Africa"
+    ],
+    "primaryRegions": [
+      "Senegal",
+      "Gambia"
+    ],
+    "countries": [
+      "Senegal",
+      "Gambia"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 14,
+      "longitude": -14,
+      "continent": "Africa",
+      "countryCode": "SN",
+      "countryName": "Senegal",
+      "regionName": "Western Africa",
+      "polygonId": "686",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/wo_sn",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_serbian",
+    "name": "Serbian",
+    "nativeName": "Serbian",
+    "aliases": [
+      "Serbian"
+    ],
+    "iso6393": "srp",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Cyrillic / Latin"
+    ],
+    "continents": [
+      "Europe"
+    ],
+    "primaryRegions": [
+      "Serbia"
+    ],
+    "countries": [
+      "Serbia"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 44,
+      "longitude": 21,
+      "continent": "Europe",
+      "countryCode": "RS",
+      "countryName": "Serbia",
+      "regionName": "Southeast Europe",
+      "polygonId": "688",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Cyrillic / Latin script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/sr_rs",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_croatian",
+    "name": "Croatian",
+    "nativeName": "Croatian",
+    "aliases": [
+      "Croatian"
+    ],
+    "iso6393": "hrv",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Europe"
+    ],
+    "primaryRegions": [
+      "Croatia"
+    ],
+    "countries": [
+      "Croatia"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 45.16666666,
+      "longitude": 15.5,
+      "continent": "Europe",
+      "countryCode": "HR",
+      "countryName": "Croatia",
+      "regionName": "Southeast Europe",
+      "polygonId": "191",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/hr_hr",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_bulgarian",
+    "name": "Bulgarian",
+    "nativeName": "Bulgarian",
+    "aliases": [
+      "Bulgarian"
+    ],
+    "iso6393": "bul",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Cyrillic"
+    ],
+    "continents": [
+      "Europe"
+    ],
+    "primaryRegions": [
+      "Bulgaria"
+    ],
+    "countries": [
+      "Bulgaria"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 43,
+      "longitude": 25,
+      "continent": "Europe",
+      "countryCode": "BG",
+      "countryName": "Bulgaria",
+      "regionName": "Southeast Europe",
+      "polygonId": "100",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Cyrillic script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/bg_bg",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_lithuanian",
+    "name": "Lithuanian",
+    "nativeName": "Lithuanian",
+    "aliases": [
+      "Lithuanian"
+    ],
+    "iso6393": "lit",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Europe"
+    ],
+    "primaryRegions": [
+      "Lithuania"
+    ],
+    "countries": [
+      "Lithuania"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 56,
+      "longitude": 24,
+      "continent": "Europe",
+      "countryCode": "LT",
+      "countryName": "Lithuania",
+      "regionName": "Northern Europe",
+      "polygonId": "440",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/lt_lt",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_latvian",
+    "name": "Latvian",
+    "nativeName": "Latvian",
+    "aliases": [
+      "Latvian"
+    ],
+    "iso6393": "lav",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Europe"
+    ],
+    "primaryRegions": [
+      "Latvia"
+    ],
+    "countries": [
+      "Latvia"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 57,
+      "longitude": 25,
+      "continent": "Europe",
+      "countryCode": "LV",
+      "countryName": "Latvia",
+      "regionName": "Northern Europe",
+      "polygonId": "428",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/lv_lv",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_estonian",
+    "name": "Estonian",
+    "nativeName": "Estonian",
+    "aliases": [
+      "Estonian"
+    ],
+    "iso6393": "est",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Europe"
+    ],
+    "primaryRegions": [
+      "Estonia"
+    ],
+    "countries": [
+      "Estonia"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 59,
+      "longitude": 26,
+      "continent": "Europe",
+      "countryCode": "EE",
+      "countryName": "Estonia",
+      "regionName": "Northern Europe",
+      "polygonId": "233",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/et_ee",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_slovenian",
+    "name": "Slovenian",
+    "nativeName": "Slovenian",
+    "aliases": [
+      "Slovenian"
+    ],
+    "iso6393": "slv",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Europe"
+    ],
+    "primaryRegions": [
+      "Slovenia"
+    ],
+    "countries": [
+      "Slovenia"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 46.11666666,
+      "longitude": 14.81666666,
+      "continent": "Europe",
+      "countryCode": "SI",
+      "countryName": "Slovenia",
+      "regionName": "Central Europe",
+      "polygonId": "705",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/sl_si",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_macedonian",
+    "name": "Macedonian",
+    "nativeName": "Macedonian",
+    "aliases": [
+      "Macedonian"
+    ],
+    "iso6393": "mkd",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Cyrillic"
+    ],
+    "continents": [
+      "Europe"
+    ],
+    "primaryRegions": [
+      "North Macedonia"
+    ],
+    "countries": [
+      "North Macedonia"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 41.83333333,
+      "longitude": 22,
+      "continent": "Europe",
+      "countryCode": "MK",
+      "countryName": "North Macedonia",
+      "regionName": "Southeast Europe",
+      "polygonId": "807",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Cyrillic script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/mk_mk",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_maori",
+    "name": "Māori",
+    "nativeName": "Māori",
+    "aliases": [
+      "Māori"
+    ],
+    "iso6393": "mri",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Oceania"
+    ],
+    "primaryRegions": [
+      "New Zealand"
+    ],
+    "countries": [
+      "New Zealand"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": -41,
+      "longitude": 174,
+      "continent": "Oceania",
+      "countryCode": "NZ",
+      "countryName": "New Zealand",
+      "regionName": "Australia and New Zealand",
+      "polygonId": "554",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/mi_nz",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_kurmanji",
+    "name": "Northern Kurdish (Kurmanji)",
+    "nativeName": "Northern Kurdish (Kurmanji)",
+    "aliases": [
+      "Northern Kurdish (Kurmanji)"
+    ],
+    "iso6393": "kmr",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "primaryRegions": [
+      "Turkey",
+      "Syria",
+      "Iraq"
+    ],
+    "countries": [
+      "Turkey",
+      "Syria",
+      "Iraq"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 39,
+      "longitude": 35,
+      "continent": "Asia",
+      "countryCode": "TR",
+      "countryName": "Türkiye",
+      "regionName": "Western Asia",
+      "polygonId": "792",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Lingua Libre / Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:LL-Q36163_(kmr)-Key_M%C3%AErza-%27Acemistan.wav",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Human recording by Speaker: Key Mîrza\nRecorder: Key Mîrza"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_malagasy",
+    "name": "Malagasy",
+    "nativeName": "Malagasy",
+    "aliases": [
+      "Malagasy"
+    ],
+    "iso6393": "mlg",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Africa"
+    ],
+    "primaryRegions": [
+      "Madagascar"
+    ],
+    "countries": [
+      "Madagascar"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": -20,
+      "longitude": 47,
+      "continent": "Africa",
+      "countryCode": "MG",
+      "countryName": "Madagascar",
+      "regionName": "Eastern Africa",
+      "polygonId": "450",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Lingua Libre / Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:LL-Q7930_(mlg)-Jagwar-adala_manenina.wav",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Human recording by Speaker: Jagwar\nRecorder: Jagwar"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_kannada",
+    "name": "Kannada",
+    "nativeName": "Kannada",
+    "aliases": [
+      "Kannada"
+    ],
+    "iso6393": "kan",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Kannada"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "primaryRegions": [
+      "India"
+    ],
+    "countries": [
+      "India"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 20,
+      "longitude": 77,
+      "continent": "Asia",
+      "countryCode": "IN",
+      "countryName": "India",
+      "regionName": "Southern Asia",
+      "polygonId": "356",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Kannada script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/kn_in",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_malayalam",
+    "name": "Malayalam",
+    "nativeName": "Malayalam",
+    "aliases": [
+      "Malayalam"
+    ],
+    "iso6393": "mal",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Malayalam"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "primaryRegions": [
+      "India"
+    ],
+    "countries": [
+      "India"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 20,
+      "longitude": 77,
+      "continent": "Asia",
+      "countryCode": "IN",
+      "countryName": "India",
+      "regionName": "Southern Asia",
+      "polygonId": "356",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Malayalam script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/ml_in",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_nepali",
+    "name": "Nepali",
+    "nativeName": "Nepali",
+    "aliases": [
+      "Nepali"
+    ],
+    "iso6393": "nep",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Devanagari"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "primaryRegions": [
+      "Nepal",
+      "India"
+    ],
+    "countries": [
+      "Nepal",
+      "India"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 28,
+      "longitude": 84,
+      "continent": "Asia",
+      "countryCode": "NP",
+      "countryName": "Nepal",
+      "regionName": "Southern Asia",
+      "polygonId": "524",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Devanagari script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/ne_np",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_indonesian",
+    "name": "Indonesian",
+    "nativeName": "Indonesian",
+    "aliases": [
+      "Indonesian"
+    ],
+    "iso6393": "ind",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "primaryRegions": [
+      "Indonesia"
+    ],
+    "countries": [
+      "Indonesia"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": -5,
+      "longitude": 120,
+      "continent": "Asia",
+      "countryCode": "ID",
+      "countryName": "Indonesia",
+      "regionName": "South-Eastern Asia",
+      "polygonId": "360",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/id_id",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_burmese",
+    "name": "Burmese",
+    "nativeName": "Burmese",
+    "aliases": [
+      "Burmese"
+    ],
+    "iso6393": "mya",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Burmese"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "primaryRegions": [
+      "Myanmar"
+    ],
+    "countries": [
+      "Myanmar"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 22,
+      "longitude": 98,
+      "continent": "Asia",
+      "countryCode": "MM",
+      "countryName": "Myanmar",
+      "regionName": "South-Eastern Asia",
+      "polygonId": "104",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Burmese script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/my_mm",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_khmer",
+    "name": "Khmer",
+    "nativeName": "Khmer",
+    "aliases": [
+      "Khmer"
+    ],
+    "iso6393": "khm",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Khmer"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "primaryRegions": [
+      "Cambodia"
+    ],
+    "countries": [
+      "Cambodia"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 13,
+      "longitude": 105,
+      "continent": "Asia",
+      "countryCode": "KH",
+      "countryName": "Cambodia",
+      "regionName": "South-Eastern Asia",
+      "polygonId": "116",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Khmer script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/km_kh",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_lao",
+    "name": "Lao",
+    "nativeName": "Lao",
+    "aliases": [
+      "Lao"
+    ],
+    "iso6393": "lao",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Lao"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "primaryRegions": [
+      "Laos"
+    ],
+    "countries": [
+      "Laos"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 18,
+      "longitude": 105,
+      "continent": "Asia",
+      "countryCode": "LA",
+      "countryName": "Laos",
+      "regionName": "South-Eastern Asia",
+      "polygonId": "418",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Lao script.",
+      "tonal": true,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/lo_la",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_tagalog",
+    "name": "Tagalog",
+    "nativeName": "Tagalog",
+    "aliases": [
+      "Tagalog"
+    ],
+    "iso6393": "tgl",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "primaryRegions": [
+      "Philippines"
+    ],
+    "countries": [
+      "Philippines"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 13,
+      "longitude": 122,
+      "continent": "Asia",
+      "countryCode": "PH",
+      "countryName": "Philippines",
+      "regionName": "South-Eastern Asia",
+      "polygonId": "608",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Google FLEURS via Hugging Face",
+      "url": "https://huggingface.co/datasets/google/fleurs/tree/main/data/fil_ph",
+      "license": "CC BY 4.0",
+      "attribution": "Google FLEURS dataset (CC BY 4.0); anonymous human speaker"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_kinyarwanda",
+    "name": "Kinyarwanda",
+    "nativeName": "Kinyarwanda",
+    "aliases": [
+      "Kinyarwanda"
+    ],
+    "iso6393": "kin",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Africa"
+    ],
+    "primaryRegions": [
+      "Rwanda"
+    ],
+    "countries": [
+      "Rwanda"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": -2,
+      "longitude": 30,
+      "continent": "Africa",
+      "countryCode": "RW",
+      "countryName": "Rwanda",
+      "regionName": "Eastern Africa",
+      "polygonId": "646",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": true,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Lingua Libre / Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:LL-Q33573_(kin)-Adygrafix250-African_Wildlife_Foundation.wav",
+      "license": "CC0",
+      "attribution": "Human recording by Speaker: Adygrafix250\nRecorder: Adygrafix250"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_albanian",
+    "name": "Albanian",
+    "nativeName": "Albanian",
+    "aliases": [
+      "Albanian"
+    ],
+    "iso6393": "sqi",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Europe"
+    ],
+    "primaryRegions": [
+      "Albania",
+      "Kosovo"
+    ],
+    "countries": [
+      "Albania",
+      "Kosovo"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 41,
+      "longitude": 20,
+      "continent": "Europe",
+      "countryCode": "AL",
+      "countryName": "Albania",
+      "regionName": "Southeast Europe",
+      "polygonId": "008",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Lingua Libre / Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:LL-Q8748_(sqi)-Arianit-Autoriteti_i_Aviacionit_Civil_i_Kosov%C3%ABs.wav",
+      "license": "CC BY 4.0",
+      "attribution": "Human recording by Speaker: Arianit\nRecorder: Arianit"
+    },
+    "enabled": true
+  },
+  {
+    "id": "lang_haitian_creole",
+    "name": "Haitian Creole",
+    "nativeName": "Haitian Creole",
+    "aliases": [
+      "Haitian Creole"
+    ],
+    "iso6393": "hat",
+    "family": "Catalogued language",
+    "branch": "Provider-reviewed variety",
+    "scripts": [
+      "Latin"
+    ],
+    "continents": [
+      "Americas"
+    ],
+    "primaryRegions": [
+      "Haiti"
+    ],
+    "countries": [
+      "Haiti"
+    ],
+    "difficulty": "MEDIUM",
+    "geoHintType": "ORIGIN_POINT",
+    "geoAnchor": {
+      "latitude": 19,
+      "longitude": -72.41666666,
+      "continent": "Americas",
+      "countryCode": "HT",
+      "countryName": "Haiti",
+      "regionName": "Caribbean",
+      "polygonId": "332",
+      "explanation": "Owner-approved recording country anchor for daily gameplay."
+    },
+    "geographicNotes": "The challenge anchor is recording-specific and does not assert that this language belongs to only one country.",
+    "clueProfile": {
+      "alphabetOrScript": "This variety is commonly written in the Latin script.",
+      "tonal": false,
+      "relatedLanguages": []
+    },
+    "sourceMetadata": {
+      "name": "Lingua Libre / Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:LL-Q33491_(hat)-Jnermano-Abolisyon_esklavaj.wav",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Human recording by Speaker: Jnermano\nRecorder: Jnermano"
+    },
+    "enabled": true
+  }
+]

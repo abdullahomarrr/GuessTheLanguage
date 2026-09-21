@@ -2,11 +2,12 @@
 
 Lingo is a daily audio geography game: listen to a mystery speaker and work out where they are from in five guesses.
 
-Each daily challenge combines a real voice recording with an interactive globe, geographic feedback, optional clues, and a Wordle-inspired one-game-per-day experience. The current development challenge features an Urdu recording from Pakistan.
+Each daily challenge combines a real voice recording with an interactive globe, geographic feedback, optional clues, and a Wordle-inspired one-game-per-day experience. The owner-approved catalogue currently rotates through 83 stored recordings.
 
 ## What is included
 
 - Daily mystery-voice challenge with five attempts
+- Deterministic 83-day shuffle with an automatic local-midnight rollover
 - Custom audio player with waveform and English translation
 - Searchable country and language-aware guessing flow
 - Interactive 3D globe with country highlighting
@@ -34,7 +35,7 @@ guessthelanguage/
 └── test/                Game-logic tests
 ```
 
-The frontend does not depend directly on a final database or audio-storage provider. The repository layer currently uses development data and is designed to move to Postgres/Supabase plus S3, R2, or Supabase Storage later. A language may belong to multiple regions, audio may come from multiple providers, and candidate recordings are not production-ready until reviewed and approved.
+The frontend does not depend directly on a final database or audio-storage provider. The repository layer currently uses development data and is designed to move to Postgres/Supabase plus S3, R2, or Supabase Storage later. A language may belong to multiple regions and audio may come from multiple providers. Only explicitly owner-approved recordings enter the daily shuffle.
 
 ## Run the game locally
 
@@ -83,7 +84,7 @@ See [`docs/DATA_LAYER.md`](docs/DATA_LAYER.md) for the application architecture 
 
 ## Current status
 
-Lingo is under active development. The mock catalogue works end-to-end, while the domain boundaries and adapters are prepared for a production database, private answer validation, server-side geo hints, managed authentication, and a larger reviewed language catalogue.
+Lingo is under active development. The 83-recording owner-approved catalogue works end-to-end, while the domain boundaries and adapters are prepared for a production database, private answer validation, server-side geo hints, managed authentication, and a larger reviewed language catalogue.
 
 ## Privacy
 

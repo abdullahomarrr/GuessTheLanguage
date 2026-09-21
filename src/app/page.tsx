@@ -170,6 +170,19 @@ export default function HomePage() {
     initGame();
   }, []);
 
+  // Move an already-open tab to the next daily challenge at local midnight.
+  useEffect(() => {
+    const now = new Date();
+    const nextMidnight = new Date(now);
+    nextMidnight.setDate(nextMidnight.getDate() + 1);
+    nextMidnight.setHours(0, 0, 0, 0);
+    const timer = window.setTimeout(
+      () => window.location.reload(),
+      Math.max(1000, nextMidnight.getTime() - now.getTime() + 250)
+    );
+    return () => window.clearTimeout(timer);
+  }, []);
+
   // Handle guess submission
   const handleSubmitGuess = useCallback(
     async (guessedCountry: CountryGuess) => {

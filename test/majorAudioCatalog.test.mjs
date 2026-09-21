@@ -13,7 +13,7 @@ const targets = JSON.parse(
   readFileSync(join(projectRoot, 'data-pipeline', 'config', 'major_language_targets.json'), 'utf8')
 );
 
-test('every acquired major-language recording is stored, traceable, and review-only', () => {
+test('every acquired major-language recording is stored, traceable, and owner-approved', () => {
   assert.equal(new Set(catalog.map((record) => record.clipId)).size, catalog.length);
   assert.equal(new Set(catalog.map((record) => record.languageId)).size, catalog.length);
 
@@ -23,8 +23,10 @@ test('every acquired major-language recording is stored, traceable, and review-o
     assert.ok(record.sourceUrl);
     assert.ok(record.license);
     assert.ok(record.transcriptOriginal);
-    assert.equal(record.moderationStatus, 'PENDING');
-    assert.equal(record.verification.approvedForGame, false);
+    assert.equal(record.moderationStatus, 'APPROVED');
+    assert.equal(record.previewOnly, false);
+    assert.equal(record.verification.approvedForGame, true);
+    assert.equal(record.verification.reviewStatus, 'APPROVED');
 
     const filePath = join(projectRoot, 'public', ...record.audioUrl.split('/').filter(Boolean));
     assert.ok(existsSync(filePath), `missing ${record.audioUrl}`);

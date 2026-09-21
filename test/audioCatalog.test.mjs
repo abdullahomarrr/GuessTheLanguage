@@ -32,10 +32,15 @@ test('sourced audio catalog has one stored recording for every language', () => 
   }
 });
 
-test('only the explicitly owner-approved Urdu recording is production-ready', () => {
+test('all 22 original recordings are explicitly owner-approved for production', () => {
   const approved = catalog.filter((record) => record.moderationStatus === 'APPROVED');
   const pending = catalog.filter((record) => record.moderationStatus === 'PENDING');
 
-  assert.deepEqual(approved.map((record) => record.languageId), ['lang_urdu']);
-  assert.equal(pending.length, 21);
+  assert.equal(approved.length, 22);
+  assert.equal(pending.length, 0);
+  for (const record of approved) {
+    assert.equal(record.previewOnly, false);
+    assert.equal(record.verification.approvedForGame, true);
+    assert.equal(record.verification.reviewStatus, 'APPROVED');
+  }
 });

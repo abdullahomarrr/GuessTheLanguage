@@ -1,6 +1,6 @@
 import countries from 'world-countries';
 import { CountryGuess, Language, LanguageVariant } from '@/types';
-import { MOCK_LANGUAGES } from '@/data/mockLanguages';
+import { PLAYABLE_LANGUAGES } from '@/data/playableLanguages';
 
 export interface ILanguageRepository {
   searchLanguages(query: string, limit?: number): Promise<Language[]>;
@@ -18,7 +18,7 @@ export class MockLanguageRepository implements ILanguageRepository {
   private languages: Language[];
   private countries: CountryGuess[];
 
-  constructor(initialData: Language[] = MOCK_LANGUAGES) {
+  constructor(initialData: Language[] = PLAYABLE_LANGUAGES) {
     this.languages = initialData
       .filter((language) => language.enabled)
       .map((language) => ({
