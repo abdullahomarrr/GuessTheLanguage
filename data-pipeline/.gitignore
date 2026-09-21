@@ -1,0 +1,9 @@
+data/raw/*
+data/processed/*
+data/audio_candidates/*
+**/__pycache__/
+*.pyc
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/audio_candidates/.gitkeep
+!data/audio_candidates/tatoeba_starter_review.json
