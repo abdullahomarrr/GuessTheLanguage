@@ -1,7 +1,7 @@
 /**
  * Unified Audio Player Service
- * Handles playback of real audio URLs, Web Speech synthesis native speech fallback,
- * and Web Audio formant synthesis to ensure audio plays reliably in any environment.
+ * Handles playback of reviewed audio files. It intentionally never synthesizes a
+ * replacement voice when a recording is missing or fails to load.
  */
 
 export interface AudioPlaybackState {
@@ -10,6 +10,7 @@ export interface AudioPlaybackState {
   duration: number;
   progress: number; // 0 to 1
   frequencies: number[]; // 32 frequency amplitudes for animated waveform
+  hasError: boolean;
 }
 
 type StateListener = (state: AudioPlaybackState) => void;
@@ -19,12 +20,9 @@ export class AudioPlayerService {
   private isPlaying: boolean = false;
   private currentTime: number = 0;
   private duration: number = 8.5;
+  private hasError: boolean = false;
   private animFrameId: number | null = null;
   private listeners: Set<StateListener> = new Set();
-  private audioContext: AudioContext | null = null;
-  private currentLanguageName: string = '';
-  private currentTranscript: string = '';
-  private speechUtterance: SpeechSynthesisUtterance | null = null;
 
   constructor() {
     if (typeof window !== 'undefined') {
@@ -33,6 +31,13 @@ export class AudioPlayerService {
 
       this.audioElement.addEventListener('ended', () => {
         this.stop();
+      });
+
+      this.audioElement.addEventListener('error', () => {
+        this.isPlaying = false;
+        this.hasError = true;
+        this.stopTicker();
+        this.notify();
       });
 
       this.audioElement.addEventListener('timeupdate', () => {
@@ -68,20 +73,18 @@ export class AudioPlayerService {
       duration: this.duration,
       progress,
       frequencies,
+      hasError: this.hasError,
     };
   }
 
   public loadClip(
     audioUrl: string,
-    durationSeconds: number,
-    transcriptText: string,
-    languageIsoOrName: string
+    durationSeconds: number
   ): void {
     this.stop();
     this.duration = durationSeconds || 8.5;
     this.currentTime = 0;
-    this.currentTranscript = transcriptText;
-    this.currentLanguageName = languageIsoOrName;
+    this.hasError = false;
 
     if (this.audioElement) {
       this.audioElement.src = audioUrl;
@@ -96,50 +99,22 @@ export class AudioPlayerService {
     this.isPlaying = true;
     this.notify();
 
-    // Check if real audio element can play the file
     if (this.audioElement && this.audioElement.src && !this.audioElement.src.endsWith('/')) {
       try {
         await this.audioElement.play();
         this.startTicker();
         return;
       } catch {
-        // Fallback to speech synthesis or web audio synthesis
+        this.isPlaying = false;
+        this.hasError = true;
+        this.notify();
+        return;
       }
     }
 
-    // High fidelity Speech Synthesis fallback
-    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-      window.speechSynthesis.cancel();
-
-      const utterance = new SpeechSynthesisUtterance(this.currentTranscript);
-      this.speechUtterance = utterance;
-
-      // Select voice matching language if available
-      const voices = window.speechSynthesis.getVoices();
-      const lowerLang = this.currentLanguageName.toLowerCase();
-      const matchedVoice = voices.find(
-        (v) =>
-          v.lang.toLowerCase().includes(lowerLang) ||
-          v.name.toLowerCase().includes(lowerLang)
-      );
-      if (matchedVoice) {
-        utterance.voice = matchedVoice;
-      }
-
-      utterance.rate = 0.95;
-      utterance.pitch = 1.0;
-
-      utterance.onend = () => {
-        this.stop();
-      };
-      utterance.onerror = () => {
-        this.stop();
-      };
-
-      window.speechSynthesis.speak(utterance);
-    }
-
-    this.startTicker();
+    this.isPlaying = false;
+    this.hasError = true;
+    this.notify();
   }
 
   public pause(): void {
@@ -149,10 +124,6 @@ export class AudioPlayerService {
     if (this.audioElement) {
       this.audioElement.pause();
     }
-    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-      window.speechSynthesis.pause();
-    }
-
     this.stopTicker();
     this.notify();
   }
@@ -165,10 +136,6 @@ export class AudioPlayerService {
       this.audioElement.pause();
       this.audioElement.currentTime = 0;
     }
-    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-      window.speechSynthesis.cancel();
-    }
-
     this.stopTicker();
     this.notify();
   }

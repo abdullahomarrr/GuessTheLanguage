@@ -7,7 +7,6 @@ import { AudioClip } from '@/types';
 
 interface CustomAudioPlayerProps {
   clip: AudioClip | null;
-  targetLanguageName?: string;
   disabled?: boolean;
 }
 
@@ -20,7 +19,6 @@ const SPEECH_PATTERN = [
 
 export const CustomAudioPlayer: React.FC<CustomAudioPlayerProps> = ({
   clip,
-  targetLanguageName,
   disabled = false,
 }) => {
   const [playbackState, setPlaybackState] = useState<AudioPlaybackState>({
@@ -29,6 +27,7 @@ export const CustomAudioPlayer: React.FC<CustomAudioPlayerProps> = ({
     duration: 8.5,
     progress: 0,
     frequencies: new Array(38).fill(0.3),
+    hasError: false,
   });
 
   const [hoverProgress, setHoverProgress] = useState<number | null>(null);
@@ -47,12 +46,10 @@ export const CustomAudioPlayer: React.FC<CustomAudioPlayerProps> = ({
     if (clip) {
       audioPlayerService.loadClip(
         clip.audioUrl,
-        clip.durationSeconds,
-        clip.transcriptOriginal,
-        targetLanguageName || 'Unknown'
+        clip.durationSeconds
       );
     }
-  }, [clip, targetLanguageName]);
+  }, [clip]);
 
   const handleTogglePlay = () => {
     if (disabled || !clip) return;
@@ -144,8 +141,8 @@ export const CustomAudioPlayer: React.FC<CustomAudioPlayerProps> = ({
               })}
             </div>
 
-            <span className="shrink-0 font-mono text-xs font-bold tabular-nums text-neutral-500 dark:text-neutral-400">
-              {formatTime(playbackState.duration)}
+            <span className={`shrink-0 text-xs font-bold tabular-nums ${playbackState.hasError ? 'text-red-500' : 'font-mono text-neutral-500 dark:text-neutral-400'}`}>
+              {playbackState.hasError ? 'Audio unavailable' : formatTime(playbackState.duration)}
             </span>
           </div>
         </div>

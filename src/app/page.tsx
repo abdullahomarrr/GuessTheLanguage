@@ -306,7 +306,6 @@ export default function HomePage() {
           </div>
           <CustomAudioPlayer
             clip={audioClip}
-            targetLanguageName={targetLanguage?.name}
           />
           {audioClip?.translationEnglish && (
             <p className="mt-2.5 px-1 text-[11px] leading-relaxed text-neutral-500 dark:text-neutral-400">
