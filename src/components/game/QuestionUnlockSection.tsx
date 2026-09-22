@@ -33,7 +33,7 @@ export const QuestionUnlockSection: React.FC<QuestionUnlockSectionProps> = ({
   return (
     <section className="relative my-4 w-full animate-in fade-in slide-in-from-bottom-2 border-y border-neutral-300 bg-neutral-100/60 px-1 py-4 dark:border-neutral-800 dark:bg-neutral-900/35">
       <div className="mb-4 flex items-center justify-between gap-3">
-        <p className="text-[10px] font-black uppercase tracking-[0.18em] text-emerald-700 dark:text-emerald-400">
+        <p className="text-[10px] font-normal uppercase tracking-[0.18em] text-emerald-700 dark:text-emerald-400">
           One clue available
         </p>
         {onSkip && (
