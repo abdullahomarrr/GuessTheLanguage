@@ -308,7 +308,7 @@ export default function HomePage() {
           </div>
         )}
         <div className="mb-3 select-none text-center sm:mb-5">
-          <p className="mb-2 hidden text-[10px] font-black uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-400 sm:block">
+          <p className="mb-2 hidden text-[10px] font-normal uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-400 sm:block">
             One mystery voice every day
           </p>
           <h1 className="font-sans text-[25px] font-black leading-tight tracking-[-0.04em] text-neutral-950 dark:text-white sm:text-4xl">
