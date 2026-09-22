@@ -257,7 +257,7 @@ export default function HomePage() {
 
     setIsAskingClue(true);
     try {
-      const response = await clueProvider.answerQuestion(targetLanguage, question);
+      const response = await clueProvider.answerQuestion(gameState.challengeId, question);
 
       // Safety blocks and questions without a verified fact should not spend the clue.
       if (response.category !== 'SAFE_CLUE') return response;

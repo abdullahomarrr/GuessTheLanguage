@@ -48,6 +48,24 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
+### Optional Gemini clue routing
+
+The clue system answers from the checked-in deterministic country catalogue.
+Gemini is used only when the local classifier cannot understand an informally
+worded question; it selects a topic and never receives the hidden country or
+authors factual answers.
+
+To enable that fallback, add the following to `.env.local`:
+
+```env
+GEMINI_API_KEY=your_key_here
+# Optional; defaults to the small Flash-Lite model.
+GEMINI_CLUE_MODEL=gemini-3.1-flash-lite
+```
+
+Keep this key server-side. Never prefix it with `NEXT_PUBLIC_` or commit it.
+The deterministic system continues to work when the key or Gemini is unavailable.
+
 Useful commands:
 
 ```bash

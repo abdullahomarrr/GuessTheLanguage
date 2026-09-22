@@ -219,6 +219,8 @@ export interface ClueQuestionResponse {
   answer: string;
   warning?: string;
   suggestedTopics?: string[];
+  topic?: string;
+  source?: 'DETERMINISTIC' | 'GEMINI_ROUTED';
 }
 
 export type GameStatus = 'PLAYING' | 'WON' | 'LOST';
