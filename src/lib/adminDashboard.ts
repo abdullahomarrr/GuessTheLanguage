@@ -33,12 +33,12 @@ export async function getDashboardData(rangeDays = 30): Promise<DashboardData> {
         coalesce((select round(avg(seconds))::int from session_times), 0) avg_seconds from ranged
     `,
     sql<Array<Record<string, string | number>>>`
-      with dates as (select generate_series(current_date - (${days - 1} * interval '1 day'), current_date, interval '1 day')::date day),
-      events as (select occurred_at::date day, count(distinct coalesce(visitor_hash, session_hash))::int visitors,
+      with dates as (select generate_series(current_date - ${days - 1}::int, current_date, interval '1 day')::date as bucket_date),
+      events as (select occurred_at::date as bucket_date, count(distinct coalesce(visitor_hash, session_hash))::int visitors,
         count(distinct session_hash)::int sessions, count(*) filter (where event_name = 'challenge_complete')::int completions
         from analytics_events where occurred_at >= current_date - (${days - 1} * interval '1 day') group by 1)
-      select dates.day::text date, coalesce(events.visitors, 0)::int visitors, coalesce(events.sessions, 0)::int sessions,
-        coalesce(events.completions, 0)::int completions from dates left join events using(day) order by dates.day
+      select dates.bucket_date::text as date, coalesce(events.visitors, 0)::int as visitors, coalesce(events.sessions, 0)::int as sessions,
+        coalesce(events.completions, 0)::int as completions from dates left join events using(bucket_date) order by dates.bucket_date
     `,
     sql<Array<ValueRow>>`select coalesce(nullif(concat_ws(', ', city_name, region_code, country_code), ''), 'Unknown') label, count(distinct session_hash)::int value from analytics_events where occurred_at >= now() - (${days} * interval '1 day') group by 1 order by value desc limit 8`,
     sql<Array<ValueRow>>`select coalesce(device_type, 'Unknown') label, count(distinct session_hash)::int value from analytics_events where occurred_at >= now() - (${days} * interval '1 day') group by 1 order by value desc`,
