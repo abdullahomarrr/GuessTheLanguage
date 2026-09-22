@@ -1,7 +1,7 @@
 import { createHmac } from 'node:crypto';
 import { adminDatabase, ensureAnalyticsSchema } from '@/lib/adminDatabase';
 
-const allowedEvents = ['session_start', 'engagement', 'challenge_view', 'challenge_complete', 'audio_review'];
+const allowedEvents = ['session_start', 'engagement', 'challenge_view', 'challenge_complete', 'audio_review', 'app_feedback'];
 
 function decodeHeader(value: string | null): string | null {
   if (!value) return null;
@@ -58,6 +58,21 @@ export async function POST(request: Request) {
         fluency_rating = excluded.fluency_rating, audio_quality_rating = excluded.audio_quality_rating,
         naturalness_rating = excluded.naturalness_rating, issue_flags = excluded.issue_flags,
         notes = excluded.notes, submitted_at = now()
+    `;
+  }
+  if (body.eventName === 'app_feedback' && body.feedback && typeof body.feedback === 'object') {
+    const feedback = body.feedback as Record<string, unknown>;
+    const areas = Array.isArray(feedback.improvementAreas) ? feedback.improvementAreas.map(String).slice(0, 10) : [];
+    await sql`
+      insert into app_feedback_submissions (challenge_id, session_hash, visitor_hash, overall_rating,
+        puzzle_fairness, return_intent, improvement_areas, suggestion, app_version)
+      values (${String(body.challengeId || '')}, ${sessionHash}, ${visitorHash}, ${Number(feedback.overallRating)},
+        ${String(feedback.puzzleFairness || '')}, ${String(feedback.returnIntent || '')}, ${sql.json(areas)},
+        ${String(feedback.suggestion || '').slice(0, 500) || null}, ${String(feedback.appVersion || '').slice(0, 50) || null})
+      on conflict (challenge_id, session_hash) do update set overall_rating = excluded.overall_rating,
+        puzzle_fairness = excluded.puzzle_fairness, return_intent = excluded.return_intent,
+        improvement_areas = excluded.improvement_areas, suggestion = excluded.suggestion,
+        app_version = excluded.app_version, submitted_at = now()
     `;
   }
   return Response.json({ accepted: true, persisted: true }, { status: 202 });

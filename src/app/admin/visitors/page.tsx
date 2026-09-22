@@ -1,0 +1,9 @@
+import { AdminPageHeader } from '@/components/admin/AdminPageHeader';
+import { AdminShell } from '@/components/admin/AdminShell';
+import { requireAdmin } from '@/lib/adminAuth';
+import { getDashboardData } from '@/lib/adminDashboard';
+
+function duration(seconds: number) { return seconds < 60 ? `${seconds || '<30'}s` : `${Math.floor(seconds / 60)}m ${seconds % 60}s`; }
+function when(value: string) { return new Intl.DateTimeFormat('en-CA', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'America/Toronto' }).format(new Date(value)); }
+
+export default async function VisitorsPage() { await requireAdmin(); const data = await getDashboardData(90); return <AdminShell active="visitors"><AdminPageHeader eyebrow="Audience" title="Visitor sessions" description="The latest 100 anonymous sessions, including engagement, source, technology, and approximate location." count={data.visitors.length}/><section className="admin-panel"><div className="admin-table-wrap"><table><thead><tr><th>Visitor</th><th>Opened</th><th>Last active</th><th>Time</th><th>Approx. location</th><th>Source</th><th>Technology</th><th>Activity</th></tr></thead><tbody>{data.visitors.length ? data.visitors.map((visitor) => <tr key={visitor.session}><td><span className="admin-mono">{visitor.visitor}</span>{visitor.returning && <span className="admin-returning">Returning</span>}</td><td>{when(visitor.firstAt)}</td><td>{when(visitor.lastAt)}</td><td>{duration(visitor.durationSeconds)}</td><td>{visitor.location}</td><td>{visitor.source}</td><td>{visitor.device} · {visitor.browser}</td><td><span className={visitor.completed ? 'admin-pill' : 'admin-pill neutral'}>{visitor.completed ? 'Completed' : `${visitor.events} events`}</span></td></tr>) : <tr><td colSpan={8} className="admin-empty">No sessions yet.</td></tr>}</tbody></table></div></section></AdminShell>; }

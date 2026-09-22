@@ -1,5 +1,6 @@
 import { STORAGE_KEYS } from '@/config';
 import { AppFeedbackSurvey } from '@/types';
+import { trackAnalyticsEvent } from '@/services/analyticsClient';
 
 export type AppFeedbackSubmission = Omit<AppFeedbackSurvey, 'submittedAt'>;
 
@@ -32,6 +33,10 @@ export class LocalStorageAppFeedbackRepository implements IAppFeedbackRepository
 
     if (this.isBrowser()) {
       localStorage.setItem(STORAGE_KEYS.appFeedback, JSON.stringify(savedFeedback));
+      trackAnalyticsEvent('app_feedback', {
+        challengeId: feedback.challengeId,
+        feedback: savedFeedback,
+      });
     }
 
     return savedFeedback;

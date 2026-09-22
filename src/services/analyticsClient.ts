@@ -1,4 +1,4 @@
-type AnalyticsEventName = 'session_start' | 'engagement' | 'challenge_view' | 'challenge_complete' | 'audio_review';
+type AnalyticsEventName = 'session_start' | 'engagement' | 'challenge_view' | 'challenge_complete' | 'audio_review' | 'app_feedback';
 
 interface AnalyticsPayload {
   challengeId?: string;
@@ -8,6 +8,7 @@ interface AnalyticsPayload {
   outcome?: 'WON' | 'LOST';
   attempts?: number;
   review?: unknown;
+  feedback?: unknown;
   durationSeconds?: number;
 }
 

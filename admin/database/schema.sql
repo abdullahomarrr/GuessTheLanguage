@@ -27,4 +27,15 @@ create table if not exists audio_review_feedback (
 );
 create index if not exists audio_review_feedback_queue_idx on audio_review_feedback(moderation_status, submitted_at desc);
 
+create table if not exists app_feedback_submissions (
+  id uuid primary key default gen_random_uuid(), challenge_id text not null,
+  session_hash text not null, visitor_hash text,
+  overall_rating smallint not null check (overall_rating between 1 and 5),
+  puzzle_fairness text not null, return_intent text not null,
+  improvement_areas jsonb not null default '[]'::jsonb, suggestion text,
+  app_version text, submitted_at timestamptz not null default now(),
+  unique(challenge_id, session_hash)
+);
+create index if not exists app_feedback_submitted_idx on app_feedback_submissions(submitted_at desc);
+
 -- Retention example: schedule deletion of raw events after the period disclosed in your privacy notice.
