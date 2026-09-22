@@ -43,6 +43,7 @@ Requirements: Node.js and npm.
 
 ```bash
 npm install
+cp .env.example .env.local
 npm run dev
 ```
 
@@ -116,3 +117,11 @@ Lingo is under active development. The 83-recording owner-approved catalogue wor
 ## Privacy
 
 The analytics design avoids storing raw IP addresses, precise coordinates, full user-agent strings, names, or emails. Approximate IP-derived location requires an appropriate privacy notice and consent flow before production use.
+
+## License
+
+Original project code and documentation are available under the
+[MIT License](LICENSE). Bundled audio recordings and third-party datasets retain
+their own licenses; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and
+[the audio attribution records](docs/AUDIO_ATTRIBUTION.md) before redistributing
+them.

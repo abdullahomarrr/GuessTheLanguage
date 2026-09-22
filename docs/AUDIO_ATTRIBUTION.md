@@ -2,6 +2,14 @@
 
 Human-recorded audio stored by the Lingo review pipeline. A listed file is not production-approved unless its manifest verification state says so.
 
+The table below covers the original catalog. Attribution for the expanded
+major-language catalog is stored alongside each recording in
+[`src/data/majorSourcedAudioCatalog.json`](../src/data/majorSourcedAudioCatalog.json).
+Each record includes its local path, creator, source and attribution URLs, and
+individual license. These attribution records must accompany redistributed
+audio. The project's MIT License does not apply to the recordings; see
+[`THIRD_PARTY_NOTICES.md`](../THIRD_PARTY_NOTICES.md).
+
 | Language | Creator | Source | Licence | Local file |
 | --- | --- | --- | --- | --- |
 | spa | Rodrigo5260 / recorder: Rodrigo5260 | [Lingua Libre / Wikimedia Commons](https://commons.wikimedia.org/wiki/File:LL-Q1321_(spa)-Rodrigo5260-a_enero_sigue_febrero,_los_dos_son_marrulleros.wav) | CC0 | `/audio/catalog/spa.wav` |
