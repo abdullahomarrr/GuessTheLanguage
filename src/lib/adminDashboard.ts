@@ -29,7 +29,7 @@ export async function getDashboardData(rangeDays = 30): Promise<DashboardData> {
         count(*) filter (where event_name = 'challenge_view')::int views,
         count(*) filter (where event_name = 'challenge_complete')::int completions,
         count(*) filter (where event_name = 'audio_review')::int reviews,
-        (select count(*)::int from visitor_sessions where sessions > 1) returning,
+        (select count(*)::int from visitor_sessions where sessions > 1) returning_visitors,
         coalesce((select round(avg(seconds))::int from session_times), 0) avg_seconds from ranged
     `,
     sql<Array<Record<string, string | number>>>`
@@ -50,7 +50,7 @@ export async function getDashboardData(rangeDays = 30): Promise<DashboardData> {
         max(coalesce(duration_seconds, 0))::int duration_seconds, count(*)::int events,
         bool_or(event_name = 'challenge_complete') completed
         from analytics_events where occurred_at >= now() - (${days} * interval '1 day') group by session_hash, coalesce(visitor_hash, session_hash))
-      select sessions.*, exists(select 1 from analytics_events earlier where coalesce(earlier.visitor_hash, earlier.session_hash) = sessions.visitor_hash and earlier.occurred_at < sessions.first_at) returning
+      select sessions.*, exists(select 1 from analytics_events earlier where coalesce(earlier.visitor_hash, earlier.session_hash) = sessions.visitor_hash and earlier.occurred_at < sessions.first_at) is_returning
       from sessions order by last_at desc limit 100
     `,
     sql<Array<Record<string, string | number | string[]>>>`select audio_clip_id, language_id, language_proficiency, pronunciation_rating, fluency_rating, audio_quality_rating, naturalness_rating, issue_flags, submitted_at::text from audio_review_feedback order by submitted_at desc limit 50`,
@@ -58,10 +58,10 @@ export async function getDashboardData(rangeDays = 30): Promise<DashboardData> {
   const total = totals[0] || {};
   return {
     mode: 'database', rangeDays: days,
-    totals: { visitors: Number(total.visitors || 0), sessions: Number(total.sessions || 0), views: Number(total.views || 0), completions: Number(total.completions || 0), reviews: Number(total.reviews || 0), returning: Number(total.returning || 0), avgSeconds: Number(total.avg_seconds || 0) },
+    totals: { visitors: Number(total.visitors || 0), sessions: Number(total.sessions || 0), views: Number(total.views || 0), completions: Number(total.completions || 0), reviews: Number(total.reviews || 0), returning: Number(total.returning_visitors || 0), avgSeconds: Number(total.avg_seconds || 0) },
     daily: dailyRows.map((row) => ({ date: String(row.date), visitors: Number(row.visitors), sessions: Number(row.sessions), completions: Number(row.completions) })),
     countries: countryRows.map((row) => ({ label: String(row.label), value: Number(row.value) })), devices: deviceRows.map((row) => ({ label: String(row.label), value: Number(row.value) })), sources: sourceRows.map((row) => ({ label: String(row.label), value: Number(row.value) })),
-    visitors: visitorRows.map((row) => ({ visitor: `${String(row.visitor_hash).slice(0, 7)}…`, session: `${String(row.session_hash).slice(0, 7)}…`, firstAt: String(row.first_at), lastAt: String(row.last_at), location: [row.city_name, row.region_code, row.country_code].filter(Boolean).join(', ') || 'Unknown', device: String(row.device_type || 'Unknown'), browser: String(row.browser_family || 'Unknown'), source: String(row.source || 'Direct'), durationSeconds: Number(row.duration_seconds || 0), events: Number(row.events || 0), completed: Boolean(row.completed), returning: Boolean(row.returning) })),
+    visitors: visitorRows.map((row) => ({ visitor: `${String(row.visitor_hash).slice(0, 7)}…`, session: `${String(row.session_hash).slice(0, 7)}…`, firstAt: String(row.first_at), lastAt: String(row.last_at), location: [row.city_name, row.region_code, row.country_code].filter(Boolean).join(', ') || 'Unknown', device: String(row.device_type || 'Unknown'), browser: String(row.browser_family || 'Unknown'), source: String(row.source || 'Direct'), durationSeconds: Number(row.duration_seconds || 0), events: Number(row.events || 0), completed: Boolean(row.completed), returning: Boolean(row.is_returning) })),
     reviews: reviewRows.map((row) => ({ clip: String(row.audio_clip_id), language: String(row.language_id), proficiency: String(row.language_proficiency), pronunciation: Number(row.pronunciation_rating), fluency: Number(row.fluency_rating), quality: Number(row.audio_quality_rating), naturalness: Number(row.naturalness_rating), issues: Array.isArray(row.issue_flags) ? row.issue_flags.map(String) : [], submittedAt: String(row.submitted_at) })),
   };
 }
