@@ -248,11 +248,19 @@ export default function HomePage() {
 
   // Handle asking AI clue question
   const handleAskClueQuestion = async (question: string) => {
-    if (!gameState || !targetLanguage || gameState.questionAsked || isAskingClue) return;
+    if (!gameState || !targetLanguage || gameState.questionAsked || isAskingClue) {
+      return {
+        category: 'UNRELATED' as const,
+        answer: 'The clue is not available right now.',
+      };
+    }
 
     setIsAskingClue(true);
     try {
       const response = await clueProvider.answerQuestion(targetLanguage, question);
+
+      // Safety blocks and questions without a verified fact should not spend the clue.
+      if (response.category !== 'SAFE_CLUE') return response;
 
       const updatedState: DailyGameState = {
         ...gameState,
@@ -264,6 +272,7 @@ export default function HomePage() {
 
       setGameState(updatedState);
       await statsRepository.saveGameState(updatedState);
+      return response;
     } finally {
       setIsAskingClue(false);
     }
@@ -292,25 +301,25 @@ export default function HomePage() {
         onOpenSettings={() => setIsSettingsOpen(true)}
       />
 
-      <main className="mx-auto flex w-full max-w-lg flex-1 flex-col px-4 pb-16 pt-5 sm:pt-7">
+      <main className="mx-auto flex w-full max-w-lg flex-1 flex-col px-4 pb-24 pt-3 sm:pb-16 sm:pt-7">
         {loadError && (
           <div role="alert" className="mb-4 rounded-md border border-rose-300 bg-rose-50 p-3 text-sm text-rose-800 dark:border-rose-900 dark:bg-rose-950/30 dark:text-rose-300">
             {loadError}
           </div>
         )}
-        <div className="mb-5 select-none text-center">
-          <p className="mb-2 text-[10px] font-black uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-400">
+        <div className="mb-3 select-none text-center sm:mb-5">
+          <p className="mb-2 hidden text-[10px] font-black uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-400 sm:block">
             One mystery voice every day
           </p>
-          <h1 className="font-sans text-[30px] font-black leading-tight tracking-[-0.04em] text-neutral-950 dark:text-white sm:text-4xl">
+          <h1 className="font-sans text-[25px] font-black leading-tight tracking-[-0.04em] text-neutral-950 dark:text-white sm:text-4xl">
             Where is this speaker from?
           </h1>
-          <p className="mt-2 font-sans text-sm text-neutral-500 dark:text-neutral-400">
-            Listen to the voice. Read the map. Find the country in five guesses.
+          <p className="mt-1.5 font-sans text-xs text-neutral-500 dark:text-neutral-400 sm:mt-2 sm:text-sm">
+            Listen closely and find the country in five guesses.
           </p>
         </div>
 
-        <section aria-label="Daily audio clue" className="mb-4 sm:mb-5">
+        <section aria-label="Daily audio clue" className="order-1 mb-2 sm:mb-5">
           <div className="mb-2 flex items-center justify-between">
             <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-neutral-500 dark:text-neutral-400">
               Today’s audio
@@ -321,58 +330,74 @@ export default function HomePage() {
             clip={audioClip}
           />
           {audioClip?.translationEnglish && (
-            <p className="mt-2.5 px-1 text-[11px] leading-relaxed text-neutral-500 dark:text-neutral-400">
-              <span className="font-semibold text-neutral-600 dark:text-neutral-300">
-                English translation:
-              </span>{' '}
-              “{audioClip.translationEnglish}”
-            </p>
+            <>
+              <details className="mt-2 px-1 text-[11px] text-neutral-500 dark:text-neutral-400 sm:hidden">
+                <summary className="cursor-pointer select-none font-semibold text-neutral-600 dark:text-neutral-300">
+                  Read English translation
+                </summary>
+                <p className="mt-1.5 leading-relaxed">“{audioClip.translationEnglish}”</p>
+              </details>
+              <p className="mt-2.5 hidden px-1 text-[11px] leading-relaxed text-neutral-500 dark:text-neutral-400 sm:block">
+                <span className="font-semibold text-neutral-600 dark:text-neutral-300">
+                  English translation:
+                </span>{' '}
+                “{audioClip.translationEnglish}”
+              </p>
+            </>
           )}
         </section>
 
-        <GlobeView
-          guesses={gameState?.guesses || []}
-          targetAnchor={isGameComplete ? targetLanguage?.geoAnchor : null}
-          isGameComplete={isGameComplete}
-        />
-
-        <AttemptIndicators
-          guesses={gameState?.guesses || []}
-          isGameComplete={isGameComplete}
-        />
-
-        {showClueComposer ? (
-          <QuestionUnlockSection
-            unlocked
-            onAskQuestion={handleAskClueQuestion}
-            onSkip={() => setIsCluePromptDismissed(true)}
-            isLoading={isAskingClue}
+        <div className="order-4 sm:order-2">
+          <GlobeView
+            guesses={gameState?.guesses || []}
+            targetAnchor={isGameComplete ? targetLanguage?.geoAnchor : null}
+            isGameComplete={isGameComplete}
           />
-        ) : (
-          <div className={shakeError ? 'animate-shake' : ''}>
-            <LanguageSearchInput
-              onSelectLanguage={() => {}}
-              onSubmitGuess={handleSubmitGuess}
-              disabled={isGameComplete}
-              disabledLanguageIds={guessedLanguageIds}
-              onOpenClue={
-                isQuestionUnlocked && !gameState?.questionAsked
-                  ? () => setIsCluePromptDismissed(false)
-                  : undefined
-              }
+        </div>
+
+        <div className="order-2 sm:order-3">
+          <AttemptIndicators
+            guesses={gameState?.guesses || []}
+            isGameComplete={isGameComplete}
+          />
+        </div>
+
+        <div className="order-3 z-30 -mx-2 sm:order-4 sm:mx-0">
+          {showClueComposer ? (
+            <QuestionUnlockSection
+              unlocked
+              onAskQuestion={handleAskClueQuestion}
+              onSkip={() => setIsCluePromptDismissed(true)}
+              isLoading={isAskingClue}
+            />
+          ) : (
+            <div className={shakeError ? 'animate-shake' : ''}>
+              <LanguageSearchInput
+                onSelectLanguage={() => {}}
+                onSubmitGuess={handleSubmitGuess}
+                disabled={isGameComplete}
+                disabledLanguageIds={guessedLanguageIds}
+                onOpenClue={
+                  isQuestionUnlocked && !gameState?.questionAsked
+                    ? () => setIsCluePromptDismissed(false)
+                    : undefined
+                }
+              />
+            </div>
+          )}
+        </div>
+
+        {gameState && gameState.guesses.length > 0 && (
+          <div className="order-5">
+            <GuessHistory
+              guesses={gameState.guesses}
+              questionAsked={gameState.questionAsked}
             />
           </div>
         )}
 
-        {gameState && gameState.guesses.length > 0 && (
-          <GuessHistory
-            guesses={gameState.guesses}
-            questionAsked={gameState.questionAsked}
-          />
-        )}
-
         {isGameComplete && (
-          <div className="my-5 text-center">
+          <div className="order-6 my-5 text-center">
             <button
               onClick={() => setIsResultOpen(true)}
               className="inline-flex h-12 w-full cursor-pointer items-center justify-center rounded-md bg-emerald-600 px-5 text-xs font-black uppercase tracking-[0.08em] text-white transition-colors hover:bg-emerald-700"

@@ -125,8 +125,9 @@ export class MockClueProvider implements IClueProvider {
       return { category: 'SAFE_CLUE', topic: 'fact' };
     }
 
-    // Default fallback to safe clue general guidance
-    return { category: 'SAFE_CLUE', topic: 'general' };
+    // Never guess what the player meant: an unclassified question cannot be
+    // matched to a verified field and should remain retryable.
+    return { category: 'UNRELATED' };
   }
 
   async answerQuestion(
@@ -161,39 +162,46 @@ export class MockClueProvider implements IClueProvider {
       };
     }
 
+    if (category === 'UNRELATED') {
+      return {
+        category,
+        answer: 'I could not match that question to a verified clue fact. Try a specific question about writing, tone, language family, speakers, or geography.',
+        warning: 'No verified answer available',
+        suggestedTopics: this.getVerifiedQuestions(hiddenLanguage),
+      };
+    }
+
     // Safe Clue answers
     let answerText = '';
 
     switch (topic) {
       case 'food':
-        answerText =
-          profile.food ||
-          `Traditional dishes and celebrated cuisine in its homeland reflect its distinct regional ingredients.`;
+        answerText = profile.food || '';
         break;
 
       case 'music':
-        answerText =
-          profile.music ||
-          `This language has a deep acoustic tradition featuring unique folk instruments and melodic rhythms.`;
+        answerText = profile.music || '';
         break;
 
       case 'script':
-        answerText =
-          profile.alphabetOrScript ||
-          `This language is written in ${hiddenLanguage.scripts.join(' / ')}.`;
+        answerText = profile.alphabetOrScript || (hiddenLanguage.scripts.length ? `This language is written in ${hiddenLanguage.scripts.join(' / ')}.` : '');
         break;
 
       case 'tonal':
-        if (profile.tonal) {
+        if (profile.tonal === true) {
           answerText = `Yes, this language is tonal. Pitch changes and inflections alter the meanings of words.`;
-        } else {
+        } else if (profile.tonal === false) {
           answerText = `No, this language is not tonal. Word meanings do not change strictly based on pitch registers.`;
         }
         break;
 
       case 'family': {
-        const related = profile.relatedLanguages?.join(', ') || 'related regional varieties';
-        answerText = `This language belongs to the ${hiddenLanguage.family} language family (specifically the ${hiddenLanguage.branch || 'regional'} branch). It shares historical connections with ${related}.`;
+        const hasReviewedFamily = hiddenLanguage.family && hiddenLanguage.family !== 'Catalogued language';
+        if (hasReviewedFamily) {
+          const branch = hiddenLanguage.branch && hiddenLanguage.branch !== 'Provider-reviewed variety' ? `, specifically the ${hiddenLanguage.branch} branch` : '';
+          const related = profile.relatedLanguages?.length ? ` It is historically related to ${profile.relatedLanguages.join(', ')}.` : '';
+          answerText = `This language belongs to the ${hiddenLanguage.family} language family${branch}.${related}`;
+        }
         break;
       }
 
@@ -205,42 +213,55 @@ export class MockClueProvider implements IClueProvider {
       }
 
       case 'literature':
-        answerText =
-          profile.famousMovieOrWork ||
-          `Its literary tradition boasts renowned epics, oral stories, and modern celebrated cinema.`;
+        answerText = profile.famousMovieOrWork || '';
         break;
 
       case 'celebration':
-        answerText =
-          profile.culturalCelebration ||
-          `Speakers celebrate vibrant cultural gatherings, historic seasonal festivals, and family celebrations.`;
+        answerText = profile.culturalCelebration || '';
         break;
 
       case 'speakers':
-        answerText = `It is spoken by approximately ${hiddenLanguage.estimatedSpeakers || 'tens of millions of people'} worldwide.`;
+        answerText = hiddenLanguage.estimatedSpeakers ? `It is spoken by approximately ${hiddenLanguage.estimatedSpeakers} worldwide.` : '';
         break;
 
       case 'history':
-        answerText =
-          profile.historicalEra ||
-          `This language possesses a long historical evolution dating back over several centuries.`;
+        answerText = profile.historicalEra || '';
         break;
 
       case 'fact':
-        answerText =
-          profile.interestingFact ||
-          `One interesting facet: ${profile.food || 'It has distinct phonetic patterns.'}`;
+        answerText = profile.interestingFact || '';
         break;
 
       default:
-        answerText = `This language belongs to the ${hiddenLanguage.family} family, primarily spoken in ${hiddenLanguage.continents.join(', ')}. ${profile.alphabetOrScript || ''}`;
+        answerText = '';
         break;
+    }
+
+    if (!answerText.trim()) {
+      return {
+        category: 'UNRELATED',
+        answer: 'I do not have a reviewed fact for that topic, so I will not make one up. Choose one of the verified questions below instead.',
+        warning: 'No verified answer available',
+        suggestedTopics: this.getVerifiedQuestions(hiddenLanguage),
+      };
     }
 
     return {
       category: 'SAFE_CLUE',
       answer: answerText,
     };
+  }
+
+  private getVerifiedQuestions(language: Language): string[] {
+    const profile = language.clueProfile;
+    const questions: string[] = [];
+    if (profile.alphabetOrScript || language.scripts.length) questions.push('What writing system does it use?');
+    if (profile.tonal !== undefined) questions.push('Is this language tonal?');
+    if (language.family && language.family !== 'Catalogued language') questions.push('What language family does it belong to?');
+    if (language.continents.length || language.primaryRegions.length) questions.push('What broad region is it associated with?');
+    if (profile.food) questions.push('What food is associated with it?');
+    if (profile.music) questions.push('What music is associated with it?');
+    return questions.slice(0, 4);
   }
 }
 

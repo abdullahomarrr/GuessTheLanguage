@@ -52,7 +52,7 @@ export const Header: React.FC<HeaderProps> = ({
         <div className="flex min-w-[92px] items-center justify-end gap-0.5">
           <button
             onClick={onOpenHelp}
-            className="grid size-9 place-items-center rounded-full text-neutral-500 transition-colors hover:bg-neutral-200/70 hover:text-neutral-950 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-white"
+            className="grid size-11 place-items-center rounded-full text-neutral-500 transition-colors hover:bg-neutral-200/70 hover:text-neutral-950 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-white sm:size-9"
             title="How to Play"
             aria-label="How to Play"
           >
@@ -60,7 +60,7 @@ export const Header: React.FC<HeaderProps> = ({
           </button>
           <button
             onClick={onOpenStats}
-            className="grid size-9 place-items-center rounded-full text-neutral-500 transition-colors hover:bg-neutral-200/70 hover:text-neutral-950 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-white"
+            className="grid size-11 place-items-center rounded-full text-neutral-500 transition-colors hover:bg-neutral-200/70 hover:text-neutral-950 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-white sm:size-9"
             title="Statistics"
             aria-label="Statistics"
           >
@@ -68,7 +68,7 @@ export const Header: React.FC<HeaderProps> = ({
           </button>
           <button
             onClick={onOpenSettings}
-            className="grid size-9 place-items-center rounded-full text-neutral-500 transition-colors hover:bg-neutral-200/70 hover:text-neutral-950 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-white"
+            className="grid size-11 place-items-center rounded-full text-neutral-500 transition-colors hover:bg-neutral-200/70 hover:text-neutral-950 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-white sm:size-9"
             title="Settings"
             aria-label="Settings"
           >

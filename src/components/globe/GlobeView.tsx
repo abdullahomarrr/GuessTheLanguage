@@ -477,7 +477,7 @@ export const GlobeView: React.FC<GlobeViewProps> = ({
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-64 sm:h-72 max-w-lg mx-auto my-1 select-none touch-none flex items-center justify-center"
+      className="relative mx-auto my-1 flex h-52 w-full max-w-lg touch-pan-y select-none items-center justify-center sm:h-72 sm:touch-none"
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}

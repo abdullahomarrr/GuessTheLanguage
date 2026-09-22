@@ -121,7 +121,7 @@ export const LanguageSearchInput: React.FC<LanguageSearchInputProps> = ({
   };
 
   return (
-    <div ref={containerRef} className="relative my-4 w-full">
+    <div ref={containerRef} className="relative my-2 w-full rounded-xl border border-neutral-200 bg-[#fbfbfb]/95 p-2.5 shadow-[0_10px_30px_rgba(0,0,0,0.08)] backdrop-blur-xl dark:border-neutral-800 dark:bg-[#070b10]/95 sm:my-4 sm:rounded-none sm:border-0 sm:bg-transparent sm:p-0 sm:shadow-none sm:backdrop-blur-none">
       <div className="mb-2 flex items-center justify-between">
         <label htmlFor="country-guess" className="block text-[11px] font-bold uppercase tracking-[0.14em] text-neutral-500 dark:text-neutral-400">
           Your guess
@@ -130,7 +130,7 @@ export const LanguageSearchInput: React.FC<LanguageSearchInputProps> = ({
           <button
             type="button"
             onClick={onOpenClue}
-            className="text-[11px] font-bold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300"
+            className="min-h-11 px-2 text-[11px] font-bold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 sm:min-h-0 sm:px-0"
           >
             Use your clue
           </button>
@@ -157,7 +157,7 @@ export const LanguageSearchInput: React.FC<LanguageSearchInputProps> = ({
               setIsOpen(true);
             }}
             onKeyDown={handleKeyDown}
-            className="h-[52px] w-full rounded-md border-2 border-neutral-300 bg-white pl-11 pr-10 text-[15px] font-medium text-neutral-950 outline-none transition-colors placeholder:text-neutral-400 focus:border-neutral-950 dark:border-neutral-700 dark:bg-[#0b1016] dark:text-white dark:placeholder:text-neutral-600 dark:focus:border-white disabled:cursor-not-allowed disabled:opacity-60"
+            className="h-[52px] w-full rounded-md border-2 border-neutral-300 bg-white pl-11 pr-10 text-base font-medium text-neutral-950 outline-none transition-colors placeholder:text-neutral-400 focus:border-neutral-950 dark:border-neutral-700 dark:bg-[#0b1016] dark:text-white dark:placeholder:text-neutral-600 dark:focus:border-white disabled:cursor-not-allowed disabled:opacity-60"
             autoComplete="off"
             autoCorrect="off"
             spellCheck="false"
@@ -179,7 +179,7 @@ export const LanguageSearchInput: React.FC<LanguageSearchInputProps> = ({
         <button
           onClick={handleSubmit}
           disabled={!selectedLanguage || disabled}
-          className={`h-[52px] shrink-0 select-none rounded-md px-6 text-sm font-black uppercase tracking-[0.08em] transition-all duration-150 ${
+          className={`h-[52px] shrink-0 select-none rounded-md px-4 text-xs font-black uppercase tracking-[0.08em] transition-all duration-150 sm:px-6 sm:text-sm ${
             selectedLanguage && !disabled
               ? 'cursor-pointer bg-emerald-600 text-white hover:bg-emerald-700 active:translate-y-px'
               : 'cursor-not-allowed bg-neutral-200 text-neutral-400 dark:bg-neutral-800 dark:text-neutral-600'
@@ -191,7 +191,7 @@ export const LanguageSearchInput: React.FC<LanguageSearchInputProps> = ({
 
       {/* Dropdown Suggestions */}
       {isOpen && !disabled && results.length > 0 && (
-        <div className="absolute z-50 left-0 right-0 mt-1 max-h-60 overflow-y-auto rounded-md border border-neutral-300 bg-white py-1 shadow-xl divide-y divide-neutral-100 dark:border-neutral-700 dark:bg-neutral-900 dark:divide-neutral-800">
+        <div className="absolute bottom-full left-0 right-0 z-50 mb-1 max-h-[min(45dvh,20rem)] overflow-y-auto overscroll-contain rounded-lg border border-neutral-300 bg-white py-1 shadow-2xl divide-y divide-neutral-100 dark:border-neutral-700 dark:bg-neutral-900 dark:divide-neutral-800 sm:bottom-auto sm:mb-0 sm:mt-1 sm:max-h-60 sm:rounded-md sm:shadow-xl">
           {results.map((lang, index) => {
             const isHighlighted = index === highlightedIndex;
 

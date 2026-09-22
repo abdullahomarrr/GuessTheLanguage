@@ -17,8 +17,8 @@ export const AttemptIndicators: React.FC<AttemptIndicatorsProps> = ({
   const currentAttemptIndex = guesses.length;
 
   return (
-    <div className="my-3 select-none" aria-label="Guess attempts">
-      <div className="mb-2 flex items-center justify-between">
+    <div className="my-2 select-none sm:my-3" aria-label="Guess attempts">
+      <div className="mb-1.5 flex items-center justify-between sm:mb-2">
         <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-neutral-500 dark:text-neutral-400">
           Attempts
         </span>
@@ -48,7 +48,7 @@ export const AttemptIndicators: React.FC<AttemptIndicatorsProps> = ({
           return (
             <div
               key={index}
-              className={`grid h-10 place-items-center rounded-[3px] border-2 text-xs font-black transition-all duration-300 sm:h-11 ${tileClass}`}
+              className={`grid h-8 place-items-center rounded-[3px] border-2 text-[11px] font-black transition-all duration-300 sm:h-11 sm:text-xs ${tileClass}`}
               title={`Attempt ${index + 1} of ${total}`}
             >
               {guess?.isCorrect ? '✓' : index + 1}
