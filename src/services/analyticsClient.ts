@@ -20,8 +20,8 @@ function getSessionId(): string {
 }
 
 export function trackAnalyticsEvent(eventName: AnalyticsEventName, payload: AnalyticsPayload): void {
-  const endpoint = process.env.NEXT_PUBLIC_LINGO_ANALYTICS_ENDPOINT;
-  if (!endpoint || typeof window === 'undefined') return;
+  if (typeof window === 'undefined') return;
+  const endpoint = process.env.NEXT_PUBLIC_LINGO_ANALYTICS_ENDPOINT || '/admin/api/ingest';
 
   const body = JSON.stringify({
     eventName,

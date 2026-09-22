@@ -30,7 +30,7 @@ guessthelanguage/
 │   └── types/           Shared domain models
 ├── public/audio/        Reviewed development audio assets
 ├── data-pipeline/       Candidate sourcing and normalization pipeline
-├── admin/               Independently runnable private admin dashboard
+├── admin/               Legacy standalone dashboard source
 ├── docs/                Architecture documentation
 └── test/                Game-logic tests
 ```
@@ -74,25 +74,28 @@ npm run lint
 npm run build
 ```
 
-## Run the admin dashboard
+## Admin dashboard and analytics
 
-The admin dashboard is a separate Next.js application inside `admin/` and runs on port `3001`.
+The password-protected dashboard is part of the main app at
+[http://localhost:3000/admin](http://localhost:3000/admin), and production uses
+`https://your-domain/admin`. Analytics are sent to the same deployment by
+default, so a separate public endpoint is not required.
 
-```powershell
-cd admin
-npm install
-Copy-Item .env.example .env.local
-npm run hash-password
-npm run dev
-```
-
-Add the generated password hash and your private secrets to `admin/.env.local`, then open [http://localhost:3001/login](http://localhost:3001/login). To send local game analytics to it, add this to the main app's `.env.local`:
+Configure these environment variables locally and in Vercel:
 
 ```env
-NEXT_PUBLIC_LINGO_ANALYTICS_ENDPOINT=http://localhost:3001/api/ingest
+# A strong password you choose (or use ADMIN_PASSWORD_HASH instead).
+ADMIN_PASSWORD=replace-with-a-strong-password
+ADMIN_SESSION_SECRET=replace-with-at-least-32-random-characters
+ANALYTICS_HASH_SECRET=replace-with-a-different-32-character-secret
+DATABASE_URL=your-postgres-connection-string
 ```
 
-The dashboard uses labelled demo data when `DATABASE_URL` is empty. Its Postgres-ready schema lives at `admin/database/schema.sql`. See [`admin/README.md`](admin/README.md) for the security and privacy boundaries.
+For production, `ADMIN_PASSWORD_HASH` is preferred over `ADMIN_PASSWORD`. A
+bcrypt hash can be generated with `cd admin; npm run hash-password`. Run
+[`admin/database/schema.sql`](admin/database/schema.sql) once against the
+database before collecting events. When `DATABASE_URL` is missing, the admin
+page clearly shows that storage is not connected and does not display fake data.
 
 ## Data and audio pipeline
 
