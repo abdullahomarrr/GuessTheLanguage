@@ -81,6 +81,11 @@ The password-protected dashboard is part of the main app at
 `https://your-domain/admin`. Analytics are sent to the same deployment by
 default, so a separate public endpoint is not required.
 
+It includes 7/30/90-day traffic and completion trends, anonymous returning
+visitors, engaged session time, recent activity, approximate city/region/country,
+device and browser families, referrers and UTM sources, and audio reviews. Raw
+IP addresses and full user-agent strings are not stored.
+
 Configure these environment variables locally and in Vercel:
 
 ```env
@@ -96,6 +101,7 @@ bcrypt hash can be generated with `cd admin; npm run hash-password`. Run
 [`admin/database/schema.sql`](admin/database/schema.sql) once against the
 database before collecting events. When `DATABASE_URL` is missing, the admin
 page clearly shows that storage is not connected and does not display fake data.
+Existing databases receive new analytics columns automatically after deployment.
 
 ## Data and audio pipeline
 

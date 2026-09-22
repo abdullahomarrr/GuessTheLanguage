@@ -27,7 +27,7 @@ import { clueProvider } from '@/services/clueProvider';
 import { statsRepository } from '@/services/statsRepository';
 import { gameDataService } from '@/services/gameDataService';
 import { gameplayGateway } from '@/services/gameplayGateway';
-import { trackAnalyticsEvent } from '@/services/analyticsClient';
+import { startAnalyticsSession, trackAnalyticsEvent } from '@/services/analyticsClient';
 
 export default function HomePage() {
   // Core game data
@@ -50,6 +50,8 @@ export default function HomePage() {
   // Settings state
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
   const [isReducedMotion, setIsReducedMotion] = useState<boolean>(false);
+
+  useEffect(() => startAnalyticsSession(), []);
 
   // Helper to format date string YYYY-MM-DD
   const getTodayDateStr = (): string => {
