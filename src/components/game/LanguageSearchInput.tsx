@@ -191,7 +191,7 @@ export const LanguageSearchInput: React.FC<LanguageSearchInputProps> = ({
 
       {/* Dropdown Suggestions */}
       {isOpen && !disabled && results.length > 0 && (
-        <div className="absolute bottom-full left-0 right-0 z-50 mb-1 max-h-[min(45dvh,20rem)] overflow-y-auto overscroll-contain rounded-lg border border-neutral-300 bg-white py-1 shadow-2xl divide-y divide-neutral-100 dark:border-neutral-700 dark:bg-neutral-900 dark:divide-neutral-800 sm:bottom-auto sm:mb-0 sm:mt-1 sm:max-h-60 sm:rounded-md sm:shadow-xl">
+        <div className="absolute bottom-full left-0 right-0 z-50 mb-1 flex max-h-[min(45dvh,20rem)] flex-col-reverse overflow-y-auto overscroll-contain rounded-lg border border-neutral-300 bg-white py-1 shadow-2xl [&>*+*]:border-b [&>*+*]:border-neutral-100 dark:border-neutral-700 dark:bg-neutral-900 dark:[&>*+*]:border-neutral-800 sm:bottom-auto sm:mb-0 sm:mt-1 sm:max-h-60 sm:flex-col sm:rounded-md sm:shadow-xl sm:[&>*+*]:border-b-0 sm:[&>*+*]:border-t">
           {results.map((lang, index) => {
             const isHighlighted = index === highlightedIndex;
 
