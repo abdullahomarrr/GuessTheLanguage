@@ -51,7 +51,7 @@ const TOPIC_PATTERNS: Array<[CountryClueTopic, RegExp[]]> = [
 ];
 
 const INJECTION_PATTERNS = [/ignore\s+(?:all\s+)?(?:previous|above)/i, /system\s+prompt/i, /developer\s+(?:message|mode)/i, /jailbreak/i, /reveal\s+your\s+instructions/i, /print\s+(?:the\s+)?prompt/i];
-const GIVEAWAY_PATTERNS = [/\bwhat\s+(?:is|country|language)\b.*\banswer\b/i, /\bwhat\s+country\b/i, /\bwhat\s+language\s+(?:is\s+it|is\s+this|are\s+they\s+speaking)\b/i, /\bwhich\s+(?:country|language)\b/i, /\bwhere\s+is\s+the\s+speaker\s+from\b/i, /\btell\s+me\s+the\s+answer\b/i, /\breveal\s+(?:the\s+)?(?:country|language|answer)\b/i, /\bfirst\s+letter\b/i, /\blast\s+letter\b/i, /\biso\s*(?:code|639)\b/i, /\bglottocode\b/i];
+const GIVEAWAY_PATTERNS = [/\bwhat\s+(?:is|country|language)\b.*\banswer\b/i, /\bwhat\s+country\b/i, /\bwhat\s+language\s+(?:is\s+it|is\s+this|are\s+they\s+speaking)\b/i, /\bwhich\s+(?:country|language)\b/i, /\bwhere\s+is\s+the\s+speaker\s+from\b/i, /\btell\s+me\s+the\s+answer\b/i, /\breveal\s+(?:the\s+)?(?:country|language|answer)\b/i, /\bspell\s+(?:the\s+)?(?:country|language|answer|it)\b/i, /\bfirst\s+letter\b/i, /\blast\s+letter\b/i, /\biso\s*(?:code|639)\b/i, /\bglottocode\b/i];
 
 export function classifyDeterministically(question: string): { category: ClueSafetyCategory; topic?: CountryClueTopic } {
   const normalized = question.trim().replace(/\s+/g, ' ');
@@ -84,7 +84,7 @@ export function answerCountryClue(language: Language, topic: CountryClueTopic, s
     case 'religion': if (facts.religions) answer = `Its religious landscape is: ${facts.religions}`; break;
     case 'languages': answer = facts.languageDetail || (facts.languages.length ? `Languages used there include ${joinList(facts.languages)}.` : ''); break;
     case 'population': if (facts.population.value) answer = `Its population is about ${formatPopulation(facts.population.value)}${facts.population.year ? ` (${facts.population.year})` : ''}.`; break;
-    case 'currency': if (facts.currencies.length) answer = `The currency used is ${joinList(facts.currencies.map((currency) => `${currency.name} (${currency.code})`))}.`; break;
+    case 'currency': if (facts.currencies.length) answer = describeCurrencies(facts.currencies); break;
     case 'capital': if (facts.capital) answer = `Its capital is ${facts.capital}.`; break;
     case 'region': answer = `It is in ${facts.subregion || facts.region}, within ${facts.region}.`; break;
     case 'borders': answer = facts.borders.length ? `It shares land borders with ${joinList(facts.borders)}.` : 'It has no land borders.'; break;
@@ -93,7 +93,9 @@ export function answerCountryClue(language: Language, topic: CountryClueTopic, s
     case 'driving_side': if (facts.drivingSide) answer = `Traffic drives on the ${facts.drivingSide} side of the road.`; break;
     case 'calling_code': if (facts.callingCode) answer = `Its international calling code is ${facts.callingCode}.`; break;
     case 'domain': if (facts.topLevelDomains.length) answer = `Its country-code internet domain is ${joinList(facts.topLevelDomains)}.`; break;
-    case 'demonym': if (facts.demonym) answer = `A person from there may be described as ${facts.demonym}.`; break;
+    // A demonym is usually just the country name in adjectival form, so it is
+    // not a useful clue once answer-leak protection is applied.
+    case 'demonym': break;
     case 'script': answer = language.clueProfile.alphabetOrScript || (language.scripts.length ? `The language is written using ${joinList(language.scripts)}.` : ''); break;
     case 'tonal':
       if (language.clueProfile.tonal === true) answer = 'Yes. This is a tonal language, so pitch can distinguish word meanings.';
@@ -107,7 +109,9 @@ export function answerCountryClue(language: Language, topic: CountryClueTopic, s
   }
 
   if (!answer) return unsupported();
-  return { category: 'SAFE_CLUE', answer, topic, source };
+  const safeAnswer = removeCountryReferences(answer, facts);
+  if (!safeAnswer) return unsupported();
+  return { category: 'SAFE_CLUE', answer: safeAnswer, topic, source };
 }
 
 export function safetyResponse(category: ClueSafetyCategory): ClueQuestionResponse {
@@ -134,4 +138,45 @@ function formatPopulation(value: number): string {
   if (value >= 1_000_000) return `${(value / 1_000_000).toFixed(value >= 100_000_000 ? 0 : 1).replace(/\.0$/, '')} million people`;
   if (value >= 1_000) return `${Math.round(value / 1_000)} thousand people`;
   return `${value.toLocaleString('en-US')} people`;
+}
+
+function describeCurrencies(currencies: CountryFactProfile['currencies']): string {
+  const units = [...new Set(currencies.map((currency) => currencyUnit(currency.name)).filter(Boolean))];
+  if (!units.length) return '';
+  return `It uses ${units.length === 1 ? `a form of the ${units[0]}` : `forms of the ${joinList(units)}`}.`;
+}
+
+function currencyUnit(name: string): string {
+  const normalized = name.toLowerCase();
+  const knownUnits = [
+    'dollar', 'euro', 'pound', 'franc', 'shilling', 'peso', 'dinar', 'dirham',
+    'riyal', 'rial', 'rupee', 'rupiah', 'krone', 'krona', 'koruna', 'leu', 'lira',
+    'yen', 'yuan', 'won', 'ruble', 'rouble', 'rand', 'real', 'quetzal', 'guarani',
+    'boliviano', 'sol', 'hryvnia', 'zloty', 'forint', 'lek', 'kwanza', 'birr',
+    'cedi', 'naira', 'metical', 'pula', 'loti', 'lilangeni', 'dalasi', 'ouguiya',
+    'ariary', 'vatu', 'tala', 'paanga', 'kina', 'riel', 'kip', 'taka', 'ngultrum',
+    'som', 'manat', 'lari', 'dram', 'denar', 'mark', 'lev', 'kuna', 'gourde',
+    'cordoba', 'balboa', 'colon', 'florin', 'guilder', 'pataca', 'shekel', 'baht',
+  ];
+  const unit = knownUnits.find((candidate) => new RegExp(`\\b${candidate}s?\\b`, 'i').test(normalized));
+  return unit || normalized.split(/\s+/).at(-1)?.replace(/s$/, '') || '';
+}
+
+function removeCountryReferences(answer: string, facts: CountryFactProfile): string {
+  const sensitiveTerms = [facts.countryName, ...facts.aliases, facts.demonym]
+    .filter((term): term is string => Boolean(term && term.length > 2))
+    .sort((a, b) => b.length - a.length);
+
+  let sanitized = answer;
+  for (const term of sensitiveTerms) {
+    const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    sanitized = sanitized.replace(new RegExp(`\\bChurch\\s+of\\s+${escaped}\\b`, 'gi'), 'the established church');
+    sanitized = sanitized.replace(new RegExp(`\\b${escaped}(?:['’]s)?\\b`, 'gi'), 'local');
+  }
+
+  return sanitized
+    .replace(/\blocal\s+local\b/gi, 'local')
+    .replace(/\s+([,.;:])/g, '$1')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
 }

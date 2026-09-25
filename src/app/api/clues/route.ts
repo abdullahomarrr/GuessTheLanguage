@@ -31,15 +31,18 @@ export async function POST(request: Request) {
   if (!language) return NextResponse.json({ error: 'Challenge metadata is unavailable.' }, { status: 404 });
 
   const deterministic = classifyDeterministically(question);
-  if (deterministic.category !== 'UNRELATED') {
-    if (deterministic.category !== 'SAFE_CLUE' || !deterministic.topic) return NextResponse.json(safetyResponse(deterministic.category));
-    return NextResponse.json(answerCountryClue(language, deterministic.topic));
+  if (deterministic.category !== 'UNRELATED' && deterministic.category !== 'SAFE_CLUE') {
+    return NextResponse.json(safetyResponse(deterministic.category));
   }
 
-  // Gemini only interprets unmatched wording. It never receives the hidden
-  // country or country facts, and it never authors the answer.
+  // Gemini is the primary intent router. It never receives the hidden country
+  // or country facts, and it never authors the answer. The local matcher keeps
+  // clues working if Gemini is unavailable.
   const geminiTopic = await classifyWithGemini(question);
   if (geminiTopic) return NextResponse.json(answerCountryClue(language, geminiTopic, 'GEMINI_ROUTED'));
+  if (deterministic.category === 'SAFE_CLUE' && deterministic.topic) {
+    return NextResponse.json(answerCountryClue(language, deterministic.topic));
+  }
   return NextResponse.json(safetyResponse('UNRELATED'));
 }
 

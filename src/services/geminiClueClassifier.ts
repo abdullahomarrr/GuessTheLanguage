@@ -18,7 +18,7 @@ export async function classifyWithGemini(question: string): Promise<CountryClueT
       body: JSON.stringify({
         contents: [{
           role: 'user',
-          parts: [{ text: `Classify this informal clue question into exactly one supported topic. Do not answer it and do not infer a country.\n\nSupported topics: ${topics.join(', ')}\n\nQuestion: ${question}` }],
+          parts: [{ text: `Classify the user's informal clue request into exactly one supported topic. Handle typos, slang, fragments, indirect wording, and questions phrased as statements. Choose unsupported only when no topic is reasonably intended. Do not answer the question and do not infer a country.\n\nSupported topics: ${topics.join(', ')}\n\nUser request: ${question}` }],
         }],
         generationConfig: {
           temperature: 0,
@@ -31,7 +31,7 @@ export async function classifyWithGemini(question: string): Promise<CountryClueT
           },
         },
       }),
-      signal: AbortSignal.timeout(3500),
+      signal: AbortSignal.timeout(6000),
     });
     if (!response.ok) return null;
     const payload = await response.json();
